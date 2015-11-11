@@ -1,0 +1,21 @@
+\documentclass{report}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries}{\thechapter. }{0pt}{\Large}
+
+\begin{document}
+  \input{./latex/title.tex}
+  \tableofcontents
+  \clearpage
+  \input{./latex/purpose.tex}
+  \input{./latex/usage.tex}
+  \input{./latex/environment.tex}
+  \input{./latex/functions.tex}
+  \input{./latex/data.tex}
+  \input{./latex/deliverables.tex}
+  \input{./latex/interface.tex}
+  \input{./latex/testcases.tex}
+  \input{./latex/quality.tex}
+  \input{./latex/appendix.tex}
+\end{document}
