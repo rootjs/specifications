@@ -1,4 +1,25 @@
 \chapter{Purpose}
+\paragraph{Project Goal}
+The goal of this project is to create Node.js bindings for ROOT, thanks to which it will become possible to e.g. integrate ROOT into Node-based Web applications.
+We aim specifically at ROOT 6 because its LLVM-based C++ interpreter Cling offers many advantages over the one available in older ROOT versions.
 \section{Must-have criteria}
+The bindings should:
+\begin{itemize}
+	\item work on Linux
+	\item allow the user to interact with any ROOT class from the Node.js JavaScript interpreter
+	\item accept C++ code for just-in-time compilation
+	\item update dynamically following changes to C++ internals
+	\item provide asynchronous wrappers for common I/O operations (i.e. file and tree access)
+\end{itemize}
 \section{Nice-to-have criteria}
+The bindings should:
+\begin{itemize}
+	\item support the streaming of data in JSON format compatible with JavaScript ROOT
+	\item work OS independent (i.e. support MAC and Windows operating systems)
+\end{itemize}
 \section{Criteria for demarcation}
+The bindings should not:
+\begin{itemize}
+	\item add any extending functionality to the existing ROOT framework.
+	\item 
+\end{itemize}
