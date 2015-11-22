@@ -1,0 +1,9 @@
+Some rather important websites for our extremely awesome group:
+
+https://piratenpad.de/p/iASkqOfh6GoazEtRrjyOG
+http://wiki.scc.kit.edu/lsdf/index.php/Node.js_Bindings_for_ROOT6
+https://pp.info.uni-karlsruhe.de/lehre/WS201516/pse/
+https://nodejs.org/api/addons.html
+https://github.com/rootjs
+http://www.breadfish.co.uk/
+https://root.cern.ch/pyroot
