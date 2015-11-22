@@ -1,6 +1,20 @@
 \chapter{Product interface}
-\begin{tabular}{|l | l|}
+The RootJS bindings do not have a usual interface, there will neither be a graphical user interface nor a command line interface.
+This section will therefore specify the application programming interface.
+
+
+\begin{longtable}{|p{1cm} | p{10cm}|}
    \hline
-  /LID/ & Description \\
+  /I10/ & The module will expose a JS object containing all accessible root variables, functions and classes \\
+  /I20/ & Exposed variables might contains scalar values, in this case they will be accessible in their JavaScript counterparts \\
+  /I30/ & Exposed variables might be objects, these objects are recursively converted to JavaScript objects until there are only scalar values \\
+  /I40/ & Exposed variables might be enums, in this case the identifier of the currently selected value is returned, insted of the corresponding integer \\
+  /I50/ & Every exposed method will be accessible via a proxy method which handles parameter overloading, as JavaScript does not support overloading, an Exception will be thrown if there is no method to handle the passed arguments \\
+  /I55/ & A method can be called with an additional callback method that will be called after the method ran \\
+  /I60/ & Exposed classes will be accessible as a construction method, returning the object, the construction method will be proxied in order to support parameter overloading, an exception will be thrown if there is no method to handle the passed arguments \\
+  /I65/ & A constructor can be called with an additional callback method that will be called after the object has been constructed \\
+  /I70/ & The classes are encapsulated in their namespaces from root. Each namespace is an Object containing namespaces, or class constructors \\
+  /I80/ & Exceptions thrown by Root will be forwarded to JavaScript and can be handled the usual way \\
+  /I90/ & \textcolor{red}{What happens when a value changes in root or a global variable is beeing changed in node? How can this be synced? e.g. call gApplication->SetName() from node, what happens to the exposed global variable gProgName?, We might add a sync method that does a bidirectional sync, or use getters and setters for global varibales which will be proxied every time, so that the js application does not have to hold any state.} \\
    \hline
-\end{tabular}
+\end{longtable}
