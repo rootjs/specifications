@@ -7,3 +7,4 @@ https://nodejs.org/api/addons.html
 https://github.com/rootjs
 http://www.breadfish.co.uk/
 https://root.cern.ch/pyroot
+http://stackoverflow.com/questions/22644328/when-is-the-thread-pool-used
