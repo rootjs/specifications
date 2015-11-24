@@ -3,7 +3,7 @@
 The goal of this project is to create Node.js\textsuperscript{\textregistered}\footnote{\url{https://nodejs.org/}} bindings for
 ROOT\footnote{\url{https://root.cern.ch/}}, thanks to which it will become possible to e.g. integrate ROOT into Node-based Web applications.\\
 We aim specifically at ROOT 6 because its LLVM-based C++ interpreter Cling offers many advantages over the one available in older ROOT versions.
-\section{Must-have criteria}
+\section{Required criteria}
 The bindings should:
 \begin{itemize}
 	\item work on Linux
@@ -14,7 +14,7 @@ The bindings should:
 \end{itemize}
 \pagebreak[3]
 
-\section{Nice-to-have criteria}
+\section{Optional criteria}
 The bindings should:
 \begin{itemize}
 	\item support the streaming of data in JSON format compatible with JavaScript ROOT
@@ -22,7 +22,7 @@ The bindings should:
 	\item work OS independent (i.e. support Mac OS X, Windows, Linux operating systems)
 \end{itemize}
 
-\section{Criteria for demarcation}
+\section{Limiting criteria}
 The bindings should not:
 \begin{itemize}
 	\item add any extending functionality to the existing ROOT framework
