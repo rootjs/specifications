@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>248</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ROOTPrototype
+--
+
+--
++ init()
+- createWrapperObject(TFunction *f)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>240</y>
+      <w>128</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>240</y>
+      <w>168</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>V8
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1064</x>
+      <y>232</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Native node.js module API</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>248</y>
+      <w>104</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.()</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>136</y>
+      <w>1096</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;1350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>56</y>
+      <w>160</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Client application</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>80</y>
+      <w>72</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;require&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>744</y>
+      <w>1032</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;1270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>40</x>
+      <y>120</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>API</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>72</x>
+      <y>728</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>ROOT framework</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>800</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>TROOT
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>872</x>
+      <y>392</y>
+      <w>424</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ProxyObjectFactory
+--
+https://github.com/root-mirror/root/tree/master/bindings/pyroot
+--
+....</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>736</x>
+      <y>40</y>
+      <w>352</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>This is neither complete nor final at all!!!
+
+This represents a basic object/API model</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>248</y>
+      <w>160</w>
+      <h>576</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>150.0;700.0;10.0;700.0;10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+</diagram>
