@@ -14,7 +14,16 @@ Web viewer receives data and renders it in the browser\\
 \pagebreak[4]
 
 \section{Object Models}
-Figure 6.1 illustrates what the bindings' architecture may look like.
+Figure 6.1 illustrates what the bindings architecture may look like.
+RootApplication::init exposes the available variables, functions and classes via V8 to JavaScript.
+Exposed functions call methodProxy, which uses the callee function name to determine the root function that should be called. This will also handle callbacks which are passed wie args parameter.
+The classProxy is called instead of methodProxy when the function name is the name of a class and the method therefore is a constructor. This will use ProxyObjectFactory to generate a JavaScript object.
+GlobalGetters and Setters is called when a global var should be accessed this again uses the ProxyObjectFactory to generate JavaScript objects.
+\\\\
+The ProxyObjectFactory creates an instance of a subclass of ProxyObject, the acutal subclass will be decided by using the type parameter.
+If the ProxyObject contains a scalar type (like int, long, string, ...) the getV8Handle will simply return the corresponding v8 handle with the value at the defined address.
+If the ProxyObject contains an object the getV8Handle method will recursivly call the ProxyObjectFactory for every element it contains and builds a JavaScript object.
+To handle reference circles we use a caching mechanism that stores already created v8 handles to reuse them.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=18cm]{./latex/resources/architecture.png}
