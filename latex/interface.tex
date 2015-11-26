@@ -3,7 +3,7 @@ The RootJS bindings do not have a usual interface, there will neither be a graph
 This section will therefore specify the application programming interface.
 
 
-\begin{longtable}{|p{1cm} | p{10cm}|}
+\begin{longtable}{|p{1cm} | p{15cm}|}
    \hline
   /I10/ & The module will expose a JS object containing all accessible root variables, functions and classes \\
   \hline
@@ -25,6 +25,6 @@ This section will therefore specify the application programming interface.
   \hline
   /I80/ & Exceptions thrown by Root will be forwarded to JavaScript and can be handled the usual way \\
   \hline
-  /I90/ & \textcolor{red}{What happens when a value changes in root or a global variable is beeing changed in node? How can this be synced? e.g. call gApplication->SetName() from node, what happens to the exposed global variable gProgName?, We might add a sync method that does a bidirectional sync, or use getters and setters for global varibales which will be proxied every time, so that the js application does not have to hold any state.} \\
+  /I90/ & Global variables are accessible via getter and setter methods to ensure their values are kept in sync with the ROOT framework \\
    \hline
 \end{longtable}
