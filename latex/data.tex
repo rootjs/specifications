@@ -1,14 +1,13 @@
 \chapter{Product data}
 
-\paragraph{}
 \begin{longtable}{|p{1cm} | p{15cm}|}
-  \hline
-  /D10/ & All ROOT classes and methods with corresponding signatures as they are dynamically mapped to javascript equivalents. They are also needed to support C/C++ specific features such as method overloading.
-  \hline
-  /D20/ & The ROOT environment state is preserved between calls from node.js. This means that objects and variables are available until the rootJS session has ended or a reset was explicitly triggered.
-  \hline
-  /D30/ & Application context deriving from TApplication, storing at least the program name and path
-  \hline
-  /D40/ & A map of v8 handles identified by the address of root objects, without this we could not handle circlic references. We would step down in the recursive creation endlessly if we do not use a cache.
-  \hline
+\hline
+/D10/ & All ROOT classes and methods with corresponding signatures as they are dynamically mapped to javascript equivalents. They are also needed to support C/C++ specific features such as method overloading.\\
+\hline
+/D20/ & The ROOT environment state is preserved between calls from node.js. This means that objects and variables are available until the rootJS session has ended or a reset was explicitly triggered.\\
+\hline
+/D30/ & Application context deriving from TApplication, storing at least the program name and path\\
+\hline
+/D40/ & A map of v8 handles identified by the address of root objects, without this we could not handle circlic references. We would step down in the recursive creation endlessly if we do not use a cache.\\
+\hline
 \end{longtable}
