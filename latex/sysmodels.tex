@@ -15,15 +15,16 @@ Web viewer receives data and renders it in the browser\\
 
 \section{Object Models}
 Figure 6.1 illustrates what the bindings architecture may look like.
-RootApplication::init exposes the available variables, functions and classes via V8 to JavaScript.
-Exposed functions call methodProxy, which uses the callee function name to determine the root function that should be called. This will also handle callbacks which are passed wie args parameter.
-The classProxy is called instead of methodProxy when the function name is the name of a class and the method therefore is a constructor. This will use ProxyObjectFactory to generate a JavaScript object.
-GlobalGetters and Setters is called when a global var should be accessed this again uses the ProxyObjectFactory to generate JavaScript objects.
+\textit{RootApplication::init} exposes the available variables, functions and classes via V8 to JavaScript.
+Exposed functions call \textit{methodProxy}, which uses the callee function name to determine the ROOT function that should be called. This will also handle callbacks which are passed via the \textit{args} parameter.
+The \textit{classProxy} is called instead of \textit{methodProxy} when the specified function is a constructor. This will use \textit{ProxyObjectFactory} to generate a JavaScript object.
+The \textit{globalGetter} and \textit{globalSetter} method are called when a global variable should be accessed. Again the \textit{ProxyObjectFactory} will be used in this case to generate corresponding JavaScript objects.
 \\\\
-The ProxyObjectFactory creates an instance of a subclass of ProxyObject, the acutal subclass will be decided by using the type parameter.
-If the ProxyObject contains a scalar type (like int, long, string, ...) the getV8Handle will simply return the corresponding v8 handle with the value at the defined address.
-If the ProxyObject contains an object the getV8Handle method will recursivly call the ProxyObjectFactory for every element it contains and builds a JavaScript object.
-To handle reference circles we use a caching mechanism that stores already created v8 handles to reuse them.
+The \textit{ProxyObjectFactory} creates an instance of a subclass of \textit{ProxyObject}, the acutal subclass will be decided by using the \textit{type} parameter.
+If the \textit{ProxyObject} contains a scalar type (like int, long, string, ...) the \textit{getV8Handle} method will simply return the corresponding V8 handle with the value at the defined address.
+If the \textit{ProxyObject} contains an object, \textit{getV8Handle} will recursively call the \textit{ProxyObjectFactory} for every element it contains and builds a JavaScript object.
+To handle reference circles we use a caching mechanism that stores already created \textit{v8::handle}s to reuse them.
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=18cm]{./latex/resources/architecture.png}
