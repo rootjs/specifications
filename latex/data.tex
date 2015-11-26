@@ -4,10 +4,10 @@
 
 \begin{longtable}{|p{1cm} | p{15cm}|}
   \hline
-  /D10/ & All ROOT classes and methods with corresponding signatures as they are dynamically mapped to JavaScript equivalents. They are also needed to support C/C++ specific features such as method overloading.\\
+  /D10/ & All ROOT classes and methods, with their corresponding method signatures, are dynamically mapped to their JavaScript equivalents. They are also needed to support C/C++ specific features such as method overloading.\\
   \hline
-  /D20/ & The ROOT environment state is preserved between calls from node.js. This means that objects and variables are available until the rootJS session has ended or a reset was explicitly triggered.\\
+  /D20/ & The ROOT environment state is preserved between calls from node.js. This means that objects and variables are available to the user until the rootJS session has ended or a reset was triggered explicitly.\\
   \hline
-  /D30/ & Application context deriving from TApplication, storing at least the correct program name and path\\
+  /D30/ & Application context derived from the ROOT class TApplication, storing at least the correct program name and path \\
   \hline
 \end{longtable}
