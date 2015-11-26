@@ -1,40 +1,42 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
   <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>488</x>
-      <y>248</y>
-      <w>240</w>
+      <x>336</x>
+      <y>192</y>
+      <w>408</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>ROOTPrototype
 --
 
 --
-+ init()
-- createWrapperObject(TFunction *f)
++ void init()
+- void methodProxy(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)
+- void classProxy(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)
+- void globalsGetter(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)
+- void globalsSetter(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>240</y>
-      <w>128</w>
+      <x>736</x>
+      <y>184</y>
+      <w>72</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>70.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>832</x>
-      <y>240</y>
+      <x>792</x>
+      <y>184</y>
       <w>168</w>
       <h>32</h>
     </coordinates>
@@ -45,8 +47,8 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1064</x>
-      <y>232</y>
+      <x>1024</x>
+      <y>176</y>
       <w>200</w>
       <h>40</h>
     </coordinates>
@@ -56,8 +58,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>976</x>
-      <y>248</y>
+      <x>936</x>
+      <y>192</y>
       <w>104</w>
       <h>24</h>
     </coordinates>
@@ -67,8 +69,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>136</y>
+      <x>120</x>
+      <y>80</y>
       <w>1096</w>
       <h>24</h>
     </coordinates>
@@ -78,8 +80,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>488</x>
-      <y>56</y>
+      <x>448</x>
+      <y>0</y>
       <w>160</w>
       <h>32</h>
     </coordinates>
@@ -89,8 +91,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>552</x>
-      <y>80</y>
+      <x>512</x>
+      <y>24</y>
       <w>72</w>
       <h>184</h>
     </coordinates>
@@ -101,8 +103,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>192</x>
-      <y>744</y>
+      <x>152</x>
+      <y>688</y>
       <w>1032</w>
       <h>24</h>
     </coordinates>
@@ -112,8 +114,8 @@
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>40</x>
-      <y>120</y>
+      <x>0</x>
+      <y>64</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -123,8 +125,8 @@
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>72</x>
-      <y>728</y>
+      <x>32</x>
+      <y>672</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -134,8 +136,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>464</x>
-      <y>800</y>
+      <x>424</x>
+      <y>744</y>
       <w>168</w>
       <h>152</h>
     </coordinates>
@@ -147,42 +149,98 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>872</x>
-      <y>392</y>
+      <x>832</x>
+      <y>336</y>
       <w>424</w>
-      <h>192</h>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-ProxyObjectFactory
+    <panel_attributes>ProxyObjectFactory
 --
-https://github.com/root-mirror/root/tree/master/bindings/pyroot
+- ProxyObjectCache cache
 --
-....</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>736</x>
-      <y>40</y>
-      <w>352</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>This is neither complete nor final at all!!!
-
-This represents a basic object/API model</panel_attributes>
+_+ ProxyObject createProxyObject(void* object, string type)_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>344</x>
-      <y>248</y>
-      <w>160</w>
+      <x>304</x>
+      <y>192</y>
+      <w>136</w>
       <h>576</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>150.0;700.0;10.0;700.0;10.0;10.0;180.0;10.0</additional_attributes>
+    <additional_attributes>150.0;700.0;10.0;700.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>568</x>
+      <y>384</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ProxyObject
+--
+-void *obj
+--
+/+bool isScalar()/
+/+v8::Handle getV8Handle()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>336</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>304</y>
+      <w>120</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>130.0;40.0;10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>544</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>ProxyObjectCache
+--
+- std:map cache
+--
+- bool isValid(void* address)
++ Handle getFromCache(void* address)
++ void storeObject(Handle obj, void* address)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>416</y>
+      <w>24</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
 </diagram>
