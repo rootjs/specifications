@@ -1,6 +1,6 @@
 \chapter{Product environment}
 
-\paragraph{Providing ROOT to node.js}
+\paragraph{Providing ROOT to Node.js}
 Node.js bindings for ROOT simplify the creation of server-client based ROOT applications. The bindings offer solutions based on state of the art web technology, especially the separation of data 
 processing and visualization.\\
 
@@ -13,11 +13,11 @@ on the CERN website.\\
 Interfacing with ROOT is done dynamically, since ROOT shares all the necessary information on its (global) functions during runtime.
 
 \subsection{Node.js}
-Node.js is an open source runtime environment. node.js is used to develop server-side web applications and may act as a 
+Node.js is an open source runtime environment. Node.js is used to develop server-side web applications and may act as a 
 stand alone web server. It uses the Google V8 engine to execute the JavaScript code. \\
-The Binding Application programming interface (API) to be developed will be a so called native node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as JavaScript equivalents.
+The Binding Application programming interface (API) to be developed will be a so called native Node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as JavaScript equivalents.
 
 \section{Hardware}
 Since the Bindings, in simplified terms, just provide data structures for encapsulation of ROOT objects or rather functions, the hardware requirements of the bindings themselves should be negligible.\\
-Basically calling a ROOT function via the Binding-API inside a node.js application really should not take up a huge amount of additional resources compared to a direct function call inside a native ROOT application.
+Basically calling a ROOT function via the Binding-API inside a Node.js application really should not take up a huge amount of additional resources compared to a direct function call inside a native ROOT application.
 In conclusion there are no additional hardware requirements for using the Bindings on a computer that was able to run native ROOT applications before - this includes almost any modern Desktop PC.
