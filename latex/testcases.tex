@@ -1,8 +1,8 @@
-\chapter{Global testcases}
-During the development process we will use Travic CI as a continious integration tool, running at least the following testcases: \\
+\chapter{Global Test Cases}
+During the development process we will use continuous integration tools, running at least the following testcases: \\
 
 \begin{longtable}{|p{1cm} | p{15cm}|}
-   \hline
+  \hline
   /T10/ & Read all global variables \\
   \hline
   /T20/ & Write to all global variables which are non const \\
@@ -11,13 +11,13 @@ During the development process we will use Travic CI as a continious integration
   \hline
   /T40/ & Create instances of all classes with a public constructor \\
   \hline
-  /T50/ & Call all methods of these Objects with valid parameters, where valid means that the 	datatyppe is correct, a method throwing an exception due to invalid input shall be considered a passed test, a creash due to e.g. invalid memory read shall be considered a fail \\
+  /T50/ & Call all methods of these Objects with valid parameters, where valid means that the 	datatype is correct, a method throwing an exception due to invalid input shall be considered a passed test, a crash due to e.g. invalid memory read shall be considered a fail \\
   \hline
   /T60/ & Read all public member variables of these classes \\
   \hline
   /T70/ & Write to all public member variables of these classes that are non constant \\
   \hline
-  /T80/ & Write to all public member variables of these classes that are constant and ensure the correct exception is trhown \\
+  /T80/ & Write to all public member variables of these classes that are constant and ensure the correct exception is thrown \\
   \hline
   /T90/ & Create instances of classes with private constructors and ensure the correct Exception is thrown \\
   \hline

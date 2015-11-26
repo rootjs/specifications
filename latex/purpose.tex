@@ -1,8 +1,8 @@
 \chapter{Purpose}
 \paragraph{Project Goal}
-The goal of this project is to create node.js\textsuperscript{\textregistered}\footnote{\url{https://nodejs.org/}} bindings for
+The goal of this project is to create Node.js\textsuperscript{\textregistered}\footnote{\url{https://nodejs.org/}} bindings for
 ROOT\footnote{\url{https://root.cern.ch/}}, thanks to which it will become possible to e.g. integrate ROOT into node-based Web applications.\\
-We aim specifically at ROOT 6 because its LLVM-based C++ interpreter Cling offers many advantages over the one available in older ROOT versions.
+We aim specifically at ROOT 6 because its Low Level Virtual Machine(LLVM)-based C++ interpreter Cling offers many advantages over the one available in older ROOT versions.
 \section{Required criteria}
 The bindings should:
 \begin{itemize}
@@ -12,14 +12,13 @@ The bindings should:
 	\item update dynamically following changes to C++ internals
 	\item provide asynchronous wrappers for common I/O operations (i.e. file and tree access)
 \end{itemize}
-\pagebreak[3]
 
 \section{Optional criteria}
 The bindings should:
 \begin{itemize}
-	\item support the streaming of data in JSON format compatible with JavaScript ROOT
-	\item implement a webserver based on node.js to mimic the function of the Root HTTP server
-	\item work OS independent (i.e. support Mac OS X, Windows, Linux operating systems)
+	\item support the streaming of data in JavaScript Object Notation (JSON) format compatible with JavaScript ROOT
+	\item implement a web server based on node.js to mimic the function of the Root HTTP server
+	\item work OS independent (i.e. support Mac OS X, Linux operating systems)
 \end{itemize}
 
 \section{Limiting criteria}

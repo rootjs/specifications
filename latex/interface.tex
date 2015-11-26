@@ -1,5 +1,5 @@
 \chapter{Product interface and functions}
-The RootJS bindings do not have a usual interface, there will neither be a graphical user interface nor a command line interface.
+The rootJS bindings do not have a usual interface, there will neither be a graphical user interface nor a command line interface.
 This section will therefore specify the application programming interface.
 
 
@@ -11,11 +11,11 @@ This section will therefore specify the application programming interface.
   \hline
   /I30/ & Exposed variables might be objects, these objects are recursively converted to JavaScript objects until there are only scalar values \\
   \hline
-  /I40/ & Exposed variables might be enums, in this case the identifier of the currently selected value is returned, insted of the corresponding integer \\
+  /I40/ & Exposed variables might be enums, in this case the identifier of the currently selected value is returned, instead of the corresponding integer \\
   \hline
   /I50/ & Every exposed method will be accessible via a proxy method which handles parameter overloading, as JavaScript does not support overloading, an Exception will be thrown if there is no method to handle the passed arguments \\
   \hline
-  /I55/ & A method can be called with an additional callback method that will be called after the method ran \\
+  /I55/ & A method can be called with an additional callback method that will be called after the method has been executed \\
   \hline
   /I60/ & Exposed classes will be accessible as a construction method, returning the object, the construction method will be proxied in order to support parameter overloading, an exception will be thrown if there is no method to handle the passed arguments \\
   \hline
