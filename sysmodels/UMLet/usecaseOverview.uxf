@@ -122,21 +122,11 @@ ROOT functionality</panel_attributes>
       <x>560</x>
       <y>540</y>
       <w>140</w>
-      <h>40</h>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>graphical output</panel_attributes>
+    <panel_attributes>create 
+graphical output</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>380</x>
-      <y>540</y>
-      <w>200</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -144,11 +134,11 @@ ROOT functionality</panel_attributes>
       <x>690</x>
       <y>510</y>
       <w>280</w>
-      <h>70</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;includes&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;50.0;260.0;50.0;260.0;10.0</additional_attributes>
+    <additional_attributes>10.0;52.0;260.0;50.0;260.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -267,5 +257,16 @@ bg=white</panel_attributes>
 fg=black
 bg=white</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>550</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
