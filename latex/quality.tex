@@ -1,14 +1,1 @@
 \chapter{Quality assurance}
-During the development process we will use Travic CI as a continious integration tool, running at least the following testcases:
-\begin{itemize}
-\item Read all global variables
-\item Write to all global variables which are non const
-\item Write to all global variables that are const and ensure the correct Exception is thrown
-\item Create instances of all classes with a public constructor
-\item Call all methods of these Objects with valid parameters, where valid means that the datatyppe is correct, a method throwing an exception due to invalid input shall be considered a passed test, a creash due to e.g. invalid memory read shall be considered a fail
-\item Read all public member variables of these classes
-\item Write to all public member variables of these classes that are non constant
-\item Write to all public member variables of these classes that are constant and ensure the correct exception is trhown
-\item Create instances of classes with private constructors and ensure the correct Exception is thrown
-\item The same for static members and methods
-\end{itemize}
