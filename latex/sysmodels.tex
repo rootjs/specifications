@@ -2,19 +2,32 @@
 
 \section{Scenarios}
 The scenarios are based on Node.js based web applications on a server running root and rootJS\\
+Bindings do not extend the basic functionality of the underlying framework.\\
+We therefore only assume a fictional application, using our API, to be the user of rootJS.\\
 
-Web viewer launches and provides a GUI to its end user	\\
-Web viewer requests data for visualization by calling rootJS\\
+
+Scenario 1: //TODO fix layout and create UML
+WebViewer, a browser based GUI for realtime representation of root graphs
+	rootJS is up and running initialize has already been executed
+	WebViewer calls the API method to get graphical output of the data ROOT has currently loadeed
+	\indent rootJS processes the request and calls the corresponding ROOT functionality
+	\indent rootJS receives ROOT output and streams it to the Webviewer client
+webViewer uses the provided data to display the graph on its GUI
+
 \indent	Node.js invokes ROOT I/O operations\\
 \indent \indent		ROOT loads data and provides raw visualization data\\
 \indent	Node.js serializes data and streams it to the web viewer\\
 Web viewer receives data and renders it in the browser\\
 \section{Use Cases}
-
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=18cm]{./latex/resources/usecaseOverview.png}
+	\caption{Usecase samples}
+\end{figure}
 \pagebreak[4]
 
 \section{Object Models}
-Figure 6.1 illustrates what the bindings architecture may look like.
+Figure 6.2 illustrates what the bindings architecture may look like.
 \textit{RootApplication::init} exposes the available variables, functions and classes via V8 to JavaScript.
 Exposed functions call \textit{methodProxy}, which uses the callee function name to determine the ROOT function that should be called. This will also handle callbacks which are passed via the \textit{args} parameter.
 The \textit{classProxy} is called instead of \textit{methodProxy} when the specified function is a constructor. This will use \textit{ProxyObjectFactory} to generate a JavaScript object.
