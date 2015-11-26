@@ -1,7 +1,7 @@
 \chapter{Product environment}
 
-\paragraph{Providing ROOT to Node.js}
-As mentioned previously in \hyperlink{section.2.1}{section 2.1} with Node.js bindings for ROOT writing ROOT applications based on the client-server model becomes simplified and offers solutions based on state of the art web technologies especially through the applied concept of separation of data processing and data visualization.
+\paragraph{Providing ROOT to node.js}
+As mentioned previously in \hyperlink{section.2.1}{section 2.1} with node.js bindings for ROOT writing ROOT applications based on the client-server model becomes simplified and offers solutions based on state of the art web technologies especially through the applied concept of separation of data processing and data visualization.
 
 \section{Software}
 \subsection{ROOT}
@@ -11,11 +11,11 @@ A detailed introduction to the ROOT framework may be found in the \textit{ROOT  
 on the CERN website.\\
 Interfacing with ROOT is done dynamically, since ROOT shares all the necessary information on its (global) functions during runtime.
 
-\subsection{Node.js}
-Node.js is an open-source, cross-platform runtime environment for developing server-side web applications. Node.js applications are written in JavaScript and may act as a stand-alone web server. It uses Google V8 JavaScript engine to execute code.\\
-The Binding API to be developed will be a so called native Node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as Javascript equivalents.
+\subsection{node.js}
+node.js is an open-source, cross-platform runtime environment for developing server-side web applications. node.js applications are written in JavaScript and may act as a stand-alone web server. It uses Google V8 JavaScript engine to execute code.\\
+The Binding API to be developed will be a so called native node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as Javascript equivalents.
 
 \section{Hardware}
 Since the Bindings, in simplified terms, just provide data structures for encapsulation of ROOT object or rather functions, the hardware requirements of the bindings themselves should be negligible.\\
-Basically calling a ROOT function via the Binding-API inside a Node.js application really should not take up a huge amount of additional resources compared to a direct function call inside a native ROOT application.
+Basically calling a ROOT function via the Binding-API inside a node.js application really should not take up a huge amount of additional resources compared to a direct function call inside a native ROOT application.
 In conclusion there are no additional hardware requirements for using the Bindings on a computer that was able to run native ROOT applications before - this includes almost any modern Desktop PC.
