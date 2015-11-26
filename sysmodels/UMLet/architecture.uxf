@@ -194,7 +194,7 @@ ProxyObject
     <id>UMLClass</id>
     <coordinates>
       <x>1168</x>
-      <y>376</y>
+      <y>400</y>
       <w>264</w>
       <h>120</h>
     </coordinates>
@@ -235,12 +235,12 @@ m1=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>368</y>
-      <w>472</w>
-      <h>32</h>
+      <y>376</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>570.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>110.0;70.0;110.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
