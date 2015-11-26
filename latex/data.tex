@@ -2,4 +2,6 @@
 
 \paragraph{}
 \textbf{/D10/}
-All functions and corresponding method signatures of ROOT to support method overloading.
+All ROOT classes and methods with corresponding signatures as they are dynamically mapped to javascript equivalents. They are also needed to support C/C++ specific features such as method overloading.
+\textbf{/D20/}
+The ROOT environment state is preserved between calls from node.js. This means that objects and variables are available until the rootJS session has ended or a reset was explicitly triggered.
