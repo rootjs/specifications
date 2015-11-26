@@ -7,7 +7,7 @@ processing and visualization.\\
 \section{Software}
 \subsection{ROOT}
 
-\paragraph{} ROOT is a software framework for data analysis and I/O. It may be used to process and especially visualize big amounts of scientific data, e.g. the petabytes of data recorded by the Large Hadron Collider experiments every year.\par
+ROOT is a software framework for data analysis and I/O. It may be used to process and especially visualize big amounts of scientific data, e.g. the petabytes of data recorded by the Large Hadron Collider experiments every year.\par
 Since the framework comes with an interpreter for the C++ programming language, for rapid and efficient prototyping and a persistency mechanism for C++ objects, ROOT based applications are  extensible and as feature rich as the C++ language itself.
 A detailed introduction to the ROOT framework may be found in the \textit{ROOT  primer}\footnote[1]{\url{https://root.cern.ch/root/html534/guides/primer/ROOTPrimer.html}}
 on the CERN website. \par
@@ -15,12 +15,12 @@ Interfacing with ROOT is done dynamically, since ROOT shares all the necessary i
 
 \subsection{Node.js}
 
-\paragraph{} Node.js is an open source runtime environment. Node.js is used to develop server-side web applications and may act as a 
+Node.js is an open source runtime environment. Node.js is used to develop server-side web applications and may act as a 
 stand alone web server. It uses the Google V8 engine to execute the JavaScript code. \par
 The Binding Application programming interface (API) to be developed will be a so called native Node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as JavaScript equivalents.
 
 \section{Hardware}
-\paragraph{}
+
 Since the Bindings simply provide data structures for the encapsulation of ROOT objects and functions, the additional hardware requirements of the bindings themselves 
 should be negligible compared to ROOT's.\par
 Basically calling a ROOT function via the Binding-API inside a Node.js application really should not take up a huge amount of additional resources compared to a direct function call inside a native ROOT application.
