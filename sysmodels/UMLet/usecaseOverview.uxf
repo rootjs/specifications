@@ -42,7 +42,7 @@ layer=3
       <x>540</x>
       <y>310</y>
       <w>500</w>
-      <h>510</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>rootJS
 halign=left</panel_attributes>
@@ -187,12 +187,12 @@ ROOT functionality</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>170</x>
+      <x>150</x>
       <y>270</y>
-      <w>100</w>
+      <w>140</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>Visualisation</panel_attributes>
+    <panel_attributes>NodeJS Application</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -235,11 +235,11 @@ ROOT functionality</panel_attributes>
       <x>730</x>
       <y>230</y>
       <w>30</w>
-      <h>610</h>
+      <h>420</h>
     </coordinates>
     <panel_attributes>lt=.
 fg=dark_gray</panel_attributes>
-    <additional_attributes>10.0;590.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;400.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
