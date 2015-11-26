@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLGeneric</id>
@@ -108,7 +109,7 @@ GetListOfGlobalFunctions(kTRUE)</panel_attributes>
       <x>42</x>
       <y>105</y>
       <w>21</w>
-      <h>637</h>
+      <h>630</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -131,33 +132,22 @@ GetListOfGlobalFunctions(kTRUE)</panel_attributes>
       <x>861</x>
       <y>0</y>
       <w>21</w>
-      <h>707</h>
+      <h>742</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;990.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;1040.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>56</x>
       <y>714</y>
-      <w>273</w>
-      <h>35</h>
+      <w>266</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 root</panel_attributes>
-    <additional_attributes>10.0;20.0;370.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>315</x>
-      <y>672</y>
-      <w>21</w>
-      <h>28</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;360.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLFrame</id>
@@ -289,10 +279,10 @@ NODE_SET_METHOD(exports, t, createMethodProxy)</panel_attributes>
       <x>735</x>
       <y>448</y>
       <w>21</w>
-      <h>245</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
@@ -332,7 +322,7 @@ NODE_MODULE(root, init)</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>140</x>
-      <y>490</y>
+      <y>504</y>
       <w>161</w>
       <h>21</h>
     </coordinates>
@@ -343,7 +333,7 @@ NODE_MODULE(root, init)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>504</y>
+      <y>518</y>
       <w>427</w>
       <h>28</h>
     </coordinates>
@@ -355,7 +345,7 @@ NODE_SET_METHOD(exports, t, createGetterSetter)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>546</y>
+      <y>560</y>
       <w>427</w>
       <h>28</h>
     </coordinates>
@@ -367,7 +357,7 @@ NODE_SET_METHOD(exports, t, createGetterSetter)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>735</x>
-      <y>518</y>
+      <y>532</y>
       <w>14</w>
       <h>42</h>
     </coordinates>
@@ -378,7 +368,7 @@ NODE_SET_METHOD(exports, t, createGetterSetter)</panel_attributes>
     <id>UMLFrame</id>
     <coordinates>
       <x>140</x>
-      <y>469</y>
+      <y>483</y>
       <w>658</w>
       <h>105</h>
     </coordinates>
@@ -389,7 +379,7 @@ NODE_SET_METHOD(exports, t, createGetterSetter)</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>140</x>
-      <y>595</y>
+      <y>623</y>
       <w>161</w>
       <h>21</h>
     </coordinates>
@@ -400,7 +390,7 @@ NODE_SET_METHOD(exports, t, createGetterSetter)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>609</y>
+      <y>637</y>
       <w>427</w>
       <h>28</h>
     </coordinates>
@@ -412,7 +402,7 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>651</y>
+      <y>679</y>
       <w>427</w>
       <h>28</h>
     </coordinates>
@@ -424,7 +414,7 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>735</x>
-      <y>623</y>
+      <y>651</y>
       <w>14</w>
       <h>42</h>
     </coordinates>
@@ -435,7 +425,7 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>UMLFrame</id>
     <coordinates>
       <x>140</x>
-      <y>574</y>
+      <y>602</y>
       <w>658</w>
       <h>105</h>
     </coordinates>
@@ -446,7 +436,7 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>770</x>
-      <y>483</y>
+      <y>497</y>
       <w>273</w>
       <h>28</h>
     </coordinates>
@@ -458,7 +448,7 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1029</x>
-      <y>476</y>
+      <y>490</y>
       <w>168</w>
       <h>56</h>
     </coordinates>
@@ -469,7 +459,7 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>770</x>
-      <y>588</y>
+      <y>616</y>
       <w>273</w>
       <h>28</h>
     </coordinates>
@@ -481,11 +471,44 @@ NODE_SET_METHOD(exports, t, createConstructorProxy)</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1029</x>
-      <y>581</y>
+      <y>609</y>
       <w>168</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>Create constructor functions</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>735</x>
+      <y>567</y>
+      <w>21</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>735</x>
+      <y>686</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>938</x>
+      <y>266</y>
+      <w>21</w>
+      <h>476</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;660.0</additional_attributes>
   </element>
 </diagram>
