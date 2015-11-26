@@ -19,11 +19,15 @@ webViewer uses the provided data to display the graph on its GUI
 \indent	Node.js serializes data and streams it to the web viewer\\
 Web viewer receives data and renders it in the browser\\
 \section{Use Cases}
-
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=18cm]{./latex/resources/usecaseOverview.png}
+	\caption{Usecase samples}
+\end{figure}
 \pagebreak[4]
 
 \section{Object Models}
-Figure 6.1 illustrates what the bindings architecture may look like.
+Figure 6.2 illustrates what the bindings architecture may look like.
 \textit{RootApplication::init} exposes the available variables, functions and classes via V8 to JavaScript.
 Exposed functions call \textit{methodProxy}, which uses the callee function name to determine the ROOT function that should be called. This will also handle callbacks which are passed via the \textit{args} parameter.
 The \textit{classProxy} is called instead of \textit{methodProxy} when the specified function is a constructor. This will use \textit{ProxyObjectFactory} to generate a JavaScript object.
