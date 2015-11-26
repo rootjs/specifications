@@ -1,13 +1,16 @@
-\documentclass{report}
+\documentclass[oneside,a4paper]{article}
 \usepackage{color}
 \usepackage{longtable}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
-\usepackage[margin=0.7in]{geometry}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage[margin=0.7in,top=1.5in,bottom=1in,right=1in,left=1in,headheight=65pt]{geometry}
 
-\rhead{\includegraphics{resources/kitlogo.png}}
+\pagestyle{fancy}
+\rhead{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+%\cfoot{}
+%\setlength\headheight{33pt}
 
 \titleformat{\chapter}[hang]
   {\normalfont\bfseries}{\thechapter. }{0pt}{\Large}
