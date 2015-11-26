@@ -5,10 +5,12 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
-\usepackage[margin=0.7in,top=1.5in,bottom=1in,right=1in,left=1in]{geometry}
+\usepackage[headheight=33pt,margin=0.7in,top=1.5in,bottom=1in,right=1in,left=1in]{geometry}
 
 \pagestyle{fancy}
-\rhead{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+\fancypagestyle{plain}{
+	\rhead{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+}
 
 \renewcommand{\arraystretch}{2}
 
@@ -24,7 +26,6 @@
   \input{./latex/environment.tex}
   \input{./latex/interface.tex}
   \input{./latex/data.tex}
-  \input{./latex/deliverables.tex}
   \input{./latex/sysmodels.tex}
   \input{./latex/testcases.tex}
   \input{./latex/quality.tex}
