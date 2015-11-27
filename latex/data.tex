@@ -1,13 +1,15 @@
 \chapter{Product data}
 
+The following data will be stored by the rootJS bindings: \\
+
 \begin{longtable}{|p{1cm} | p{15cm}|}
 \hline
 /D10/ & All ROOT classes and methods with corresponding signatures as they are dynamically mapped to JavaScript equivalents. They are also needed to support C/C++ specific features such as method overloading.\\
 \hline
-/D20/ & The ROOT environment state is preserved between calls from Node.js. This means that objects and variables are available until the rootJS session has ended or a reset was explicitly triggered.\\
+/D20/ & The ROOT environment state is preserved between calls from Node.js. This means that objects and variables are available until the rootJS session has ended or a reset was triggered explicitly.\\
 \hline
-/D30/ & Application context derived from TApplication, storing at least the program name and path\\
+/D30/ & The application context derived from \textit{TApplication}\footnote{\url{https://root.cern.ch/doc/master/classTApplication.html}}, storing at least the program name and path.\\
 \hline
-/D40/ & A map of V8 handles identified by the address of root objects, without this we could not handle cyclic references. We would step down in the recursive creation endlessly if we do not use a cache.\\
+/D40/ & A map of \textit{v8::handle}'s\footnote{\url{http://izs.me/v8-docs/classv8_1_1Handle.html}} identified by the address of ROOT objects will be stored to allow proper handling of cyclic references, because the data is used to provide a cache that prevents stepping down in the recursive (object) creation endlessly.\\
 \hline
 \end{longtable}

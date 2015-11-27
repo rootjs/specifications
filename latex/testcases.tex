@@ -1,26 +1,26 @@
 \chapter{Global Test Cases}
-During the development process we will use continuous integration tools, running at least the following test cases: \\
+During the development process continuous integration tools will be used to run at least the following test cases: \\
 
 \begin{longtable}{|p{1cm} | p{15cm}|}
   \hline
-  /T10/ & Read all global variables \\
+  /T10/ & Read all global variables.\\
   \hline
-  /T20/ & Write to all global variables that are not constant \\
+  /T20/ & Write to all global variables that are not constant.\\
   \hline
-  /T30/ & Write to all global variables that are constant and ensure the correct Exception is thrown \\
+  /T30/ & Write to all global variables that are constant and ensure the correct Exception is thrown.\\
   \hline
-  /T40/ & Create instances of all classes with a public constructor \\
+  /T40/ & Create instances of all classes with a public constructor.\\
   \hline
-  /T50/ & Call all methods of these Objects with valid parameters, where valid means that the 	data type is correct, a method throwing an exception due to invalid input shall be considered a passed test, a crash due to e.g. invalid memory read shall be considered a fail \\
+  /T50/ & Call all methods of these objects with valid parameters, where valid means that the data type is correct, a method throwing an exception due to invalid input shall be considered as a passed test, a crash due to e.g. invalid memory read shall be considered as a failed test.\\
   \hline
-  /T60/ & Read all public member variables of these classes \\
+  /T60/ & Read all public member variables of these classes.\\
   \hline
-  /T70/ & Write to all public member variables of these classes that are not constant \\
+  /T70/ & Write to all public member variables of these classes that are not constant.\\
   \hline
-  /T80/ & Write to all public member variables of these classes that are constant and ensure the correct exception is thrown \\
+  /T80/ & Write to all public member variables of these classes that are constant and ensure the correct exception is thrown.\\
   \hline
-  /T90/ & Create instances of classes with private constructors and ensure the correct Exception is thrown \\
+  /T90/ & Create instances of classes with private constructors and ensure the correct exception is thrown.\\
   \hline
-  /T100/ &  The same for static members and methods \\
+  /T100/ &  Apply the test cases described in /T60/ to /T90/ to static members and methods. Ensure correct exceptions are thrown.\\
    \hline
 \end{longtable}

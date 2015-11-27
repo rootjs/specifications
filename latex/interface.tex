@@ -5,26 +5,26 @@ This section will therefore specify the API of rootJS.
 
 \begin{longtable}{|p{1cm} | p{15cm}|}
   \hline
-  /I10/ & The module will expose a JavaScript object containing all accessible root variables, functions and classes \\
+  /I10/ & The rootJS module will expose a JavaScript object containing all accessible ROOT variables, functions and classes.\\
   \hline
-  /I20/ & Exposed variables might contain scalar values, in this case they will be accessible in their JavaScript counterparts \\
+  /I20/ & Exposed variables might contain scalar values, in this case they will be accessible in their JavaScript counterparts.\\
   \hline
-  /I30/ & Exposed variables might be objects, which are recursively converted to JavaScript objects until there are only scalar values \\
+  /I30/ & Exposed variables might be objects, which are recursively converted to JavaScript objects until there are only scalar values.\\
   \hline
-  /I40/ & Exposed variables might be enums. In this case the identifier of the currently selected value is returned instead of the corresponding integer \\
+  /I40/ & Exposed variables might be enums. In this case the identifier of the currently selected value is returned instead of the corresponding integer.\\
   \hline
-  /I50/ & Every exposed method will be accessible via a proxy method which handles parameter overloading, as JavaScript does not support overloading. If there is no method to handle the passed arguments, an exception will be thrown \\
+  /I50/ & Every exposed method will be accessible via a proxy method, which handles parameter overloading, as JavaScript does not support overloading. If there is no method to handle the passed arguments, an exception will be thrown.\\
   \hline
-  /I55/ & A method can be called with an additional callback method that will be called after the original method has been executed \\
+  /I55/ & A method may be called with an additional callback method that will be called after the original method has been executed.\\
   \hline
-  /I60/ & Exposed classes will be accessible as a constructor returning the object. The constructor will be proxied to support parameter overloading. If there is no method to handle the passed arguments, an exception will be thrown  \\
+  /I60/ & Exposed classes will be accessible via constructors returning the corresponding objects. A constructor will be accessible through a proxy function to support parameter overloading. If there is no method to handle the passed arguments, an exception will be thrown.\\
   \hline
-  /I65/ & A constructor can be called with an additional callback method that will be called after the object has been constructed \\
+  /I65/ & A constructor can be called with an additional callback method that will be executed after the object has been constructed.\\
   \hline
-  /I70/ & The classes are encapsulated in their namespaces from ROOT. Each namespace is an Object containing namespaces or class constructors \\
+  /I70/ & The classes are encapsulated in their namespaces from ROOT. Each namespace is an object containing namespaces or class constructors.\\
   \hline
-  /I80/ & Exceptions thrown by Root will be forwarded to JavaScript and can be treated by JavaScript as normal exceptions \\
+  /I80/ & Exceptions thrown by ROOT will be forwarded to JavaScript and can be treated by JavaScript as normal exceptions.\\
   \hline
-  /I90/ & Global variables are accessible via getter and setter methods to ensure their values are kept in sync with the ROOT framework \\
+  /I90/ & Global variables are accessible via getter and setter methods to ensure their values are kept in sync with the ROOT framework.\\
   \hline
 \end{longtable}
