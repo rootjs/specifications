@@ -38,7 +38,8 @@ Every \textit{ROOT:PrototypeObject} provides the \textit{globalGetter} and \text
 The \textit{ProxyObjectFactory} instantiates a class realizing the \textit{ProxyObject} interface. The actual class type will be decided by using the \textit{type} parameter.
 If the \textit{ProxyObject} contains a scalar type (like int, long, string, etc.) the \textit{getV8Handle} method will simply return the corresponding \textit{v8::handle} with the value at a defined address.
 If the \textit{ProxyObject} contains an object, \textit{getV8Handle} will recursively call the \textit{ProxyObjectFactory} for every element it contains to finally build the encapsulating JavaScript object.
-To handle cyclic references a caching mechanism that stores already created \textit{v8::handle}s is used.
+To handle cyclic references a caching mechanism that stores already created \textit{v8::handle}s is used.\\
+The process of accessing an ROOT object using this architecture is described in Figure 6.4.
 
 \begin{figure}[htb]
 	\centering
@@ -50,8 +51,15 @@ To handle cyclic references a caching mechanism that stores already created \tex
 
 \section{Dynamic Models}
 The following figure shows how rootJS initializes upon being called the first time by a client application. As bindings do not add any functionality of their own, the client application is not further specified. After the bindings are initialized the client application may use any ROOT functionality through the roootJS API.
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=18cm]{./latex/resources/startupSequence.png}
 	\caption{basic startup sequence}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=18cm]{./latex/resources/fileOpen.png}
+	\caption{basic sequence used for opening a file}
 \end{figure}
