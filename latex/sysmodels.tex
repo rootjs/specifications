@@ -1,7 +1,7 @@
 \chapter{System Models}
 
 \section{Scenarios}
-The scenarios are based on Node.js based web applications on a server running root and rootJS\\
+The scenarios are based on Node.js based web applications on a server running ROOT and rootJS\\
 Bindings do not extend the basic functionality of the underlying framework.\\
 We therefore only assume a fictional application, using our API, to be the user of rootJS.\\
 
@@ -9,7 +9,7 @@ We therefore only assume a fictional application, using our API, to be the user 
 Scenario 1: //TODO fix layout and create UML\\
 WebViewer, a browser based GUI for realtime representation of root graphs
 	rootJS is up and running initialize has already been executed
-	WebViewer calls the API method to get graphical output of the data ROOT has currently loadeed
+	WebViewer calls the API method to get graphical output of the data ROOT has currently loaded
 	\indent rootJS processes the request and calls the corresponding ROOT functionality
 	\indent rootJS receives ROOT output and streams it to the Webviewer client
 webViewer uses the provided data to display the graph on its GUI
@@ -18,6 +18,7 @@ webViewer uses the provided data to display the graph on its GUI
 \indent \indent		ROOT loads data and provides raw visualization data\\
 \indent	Node.js serializes data and streams it to the web viewer\\
 Web viewer receives data and renders it in the browser\\
+
 \section{Use Cases}
 \begin{figure}[htb]
 	\centering
