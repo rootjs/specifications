@@ -28,16 +28,16 @@ Web viewer receives data and renders it in the browser\\
 \pagebreak[4]
 
 \section{Object Models}
-Figure 6.2 illustrates what the bindings architecture may look like.
-\textit{RootApplication::init} exposes the available variables, functions and classes via V8 to JavaScript.
-Exposed functions call \textit{methodProxy}, which uses the callee function name to determine the ROOT function that should be called. This will also handle callbacks which are passed via the \textit{args} parameter.
-The \textit{classProxy} is called instead of \textit{methodProxy} when the specified function is a constructor. This will use \textit{ProxyObjectFactory} to generate a JavaScript object.
-The \textit{globalGetter} and \textit{globalSetter} method are called when a global variable should be accessed. Again the \textit{ProxyObjectFactory} will be used in this case to generate corresponding JavaScript objects.
-\\\\
-The \textit{ProxyObjectFactory} creates an instance of a subclass of \textit{ProxyObject}, the acutal subclass will be decided by using the \textit{type} parameter.
-If the \textit{ProxyObject} contains a scalar type (like int, long, string, ...) the \textit{getV8Handle} method will simply return the corresponding \textit{v8::handle} with the value at the defined address.
-If the \textit{ProxyObject} contains an object, \textit{getV8Handle} will recursively call the \textit{ProxyObjectFactory} for every element it contains and builds a JavaScript object.
-To handle reference circles we use a caching mechanism that stores already created \textit{v8::handle}s to reuse them.
+Figure 6.2 illustrates what the rootJS architecture may look like.\\
+\textit{ROOTPrototype::init} uses V8 to create an interface to the available variables, functions and classes of ROOT for a client Node.js application.
+Functions provided through this interface internally call \textit{methodProxy} to determine the associated ROOT function through the given function name of the callee. This allows handling of supplied callback functions by passing them via the \textit{args} parameter.\\
+Constructor functions provided by the interface internally use \textit{classProxy} instead of \textit{methodProxy} on calls to generate matching JavaScript object through the \textit{ProxyObjectFactory}.
+Every \textit{ROOT:PrototypeObject} provides the \textit{globalGetter} and \textit{globalSetter} methods to interface with ROOT's global variables. Again the \textit{ProxyObjectFactory} will be used to generate needed JavaScript objects.
+\\ \\
+The \textit{ProxyObjectFactory} instantiates a class realizing the \textit{ProxyObject} interface. The actual class type will be decided by using the \textit{type} parameter.
+If the \textit{ProxyObject} contains a scalar type (like int, long, string, etc.) the \textit{getV8Handle} method will simply return the corresponding \textit{v8::handle} with the value at a defined address.
+If the \textit{ProxyObject} contains an object, \textit{getV8Handle} will recursively call the \textit{ProxyObjectFactory} for every element it contains to finally build the encapsulating JavaScript object.
+To handle cyclic references a caching mechanism that stores already created \textit{v8::handle}s is used.
 
 \begin{figure}[htb]
 	\centering
@@ -48,9 +48,9 @@ To handle reference circles we use a caching mechanism that stores already creat
 \pagebreak[4]
 
 \section{Dynamic Models}
-The following figure shows how rootJS initializes upon being called the first time by a client application. As bindings do not add any functionality of their own, the client application is not further specified. After the bindings are initialized the client application may use any root functionality through the roootJS API.
+The following figure shows how rootJS initializes upon being called the first time by a client application. As bindings do not add any functionality of their own, the client application is not further specified. After the bindings are initialized the client application may use any ROOT functionality through the roootJS API.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=18cm]{./latex/resources/startupSequence.png}
-	\caption{startup sequence}
+	\caption{basic startup sequence}
 \end{figure}

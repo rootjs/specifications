@@ -7,20 +7,20 @@ processing and visualization.\\
 \section{Software}
 \subsection{ROOT}
 
-ROOT is a software framework for data analysis and I/O. It may be used to process and especially visualize big amounts of scientific data, e.g. the petabytes of data recorded by the Large Hadron Collider experiments every year.\par
+ROOT is a software framework for data analysis and I/O. It may be used to process and especially visualize big amounts of scientific data, e.g. the petabytes of data recorded by the Large Hadron Collider experiments every year.\\
 Since the framework comes with an interpreter for the C++ programming language it may be used for rapid and efficient prototyping. It also features a persistency mechanism for C++ objects. Therefore ROOT based applications are extensible and as feature rich as the C++ language itself.
 A detailed introduction to the ROOT framework may be found in the \textit{ROOT  primer}\footnote[1]{\url{https://root.cern.ch/root/html534/guides/primer/ROOTPrimer.html}}
-on the CERN website. \par
+on the CERN website. \\ \\
 Interfacing with ROOT is done dynamically, since ROOT shares all the necessary information on its (global) functions during runtime.
 
 \subsection{Node.js}
 
-Node.js is an open source runtime environment. It is used to develop server-side web applications and may act as a stand alone web server. It uses the Google V8 engine to execute the JavaScript code. \par
-The Binding Application programming interface (API) to be developed will be a so called native Node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as JavaScript equivalents.
+Node.js is an open source runtime environment. It is used to develop server-side web applications and may act as a stand alone web server. It uses the Google V8 engine to execute the JavaScript code. \\ \\
+The rootJS Binding-API will be developed as a so called native Node.js module written in C++. It interfaces directly with the V8 API to provide (non-blocking) encapsulation of ROOT objects as JavaScript equivalents.
 
 \section{Hardware}
 
 Since the Bindings simply provide data structures for the encapsulation of ROOT objects and functions, the additional hardware requirements of the bindings themselves 
-should be negligible compared to ROOT's.\par
+should be negligible compared to ROOT's.\\ \\
 Basically calling a ROOT function via the Binding-API inside a Node.js application will take up a minimal amount of additional resources compared to a direct function call inside a native ROOT application.
-In conclusion there are no additional hardware requirements for using the Bindings on a computer that was able to run native ROOT applications before - this includes almost any modern Desktop PC.
+In conclusion there are no additional hardware requirements for using the bindings on a computer that was able to run native ROOT applications before - this includes almost any modern Desktop PC.
