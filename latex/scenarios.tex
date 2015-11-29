@@ -14,17 +14,17 @@ we decided to give some examples on how the bindings might be used.
 		\textit{Abstract} & A browser based GUI for realtime representation of root graphs.\\
 		\hline
 	
-		\textit{Participating actor instances} & \underline{:Node.js}; \underline{:ROOT}; \underline{:rootJS}\\
+		\textit{Participating actor instances} & \underline{WebViewer:Node.js}; \underline{:ROOT}; \underline{:rootJS}\\
 		\hline
 	
 		\textit{Flow of events} & 
 		\begin{enumerate}
 			\item rootJS is up and running initialize has already been executed.
 			
-			\item	WebViewer calls the API method to get graphical output of the data ROOT has currently loaded.
+			\item WebViewer calls the API method to get graphical output of the data ROOT has currently loaded.
 				\begin{enumerate}
 					\item rootJS processes the request and calls the corresponding ROOT functionality.
-					\item rootJS receives ROOT output and streams it to the Webviewer client
+					\item rootJS receives ROOT output and streams it to WebViewer
 				\end{enumerate}
 			\item WebViewer uses the provided data to display the graph on its GUI
 				\begin{enumerate}
@@ -32,9 +32,9 @@ we decided to give some examples on how the bindings might be used.
 						\begin{enumerate}
 							\item ROOT loads data and provides raw visualization data.
 						\end{enumerate}
-					\item Node.js serializes data and streams it to the web viewer.
+					\item Node.js serializes data and streams it to WebViewer.
 				\end{enumerate}
-			\item Web viewer receives data and renders it in the browser.
+			\item WebViewer receives data and renders it in the browser.
 		\end{enumerate}
 		\\
 		\hline
@@ -45,47 +45,37 @@ we decided to give some examples on how the bindings might be used.
 	
 \end{figure}
 
-%\begin{figure}[htb]
-%	\centering
-%	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
-%		\hline
-%		\textit{Scenario Name} & \underline{eventViewer}\\
-%		\hline
-%		\textit{Abstract} &
-%		The purpose of an event viewer is to provide a visualisation of experimental data, showing signals %particles have produced in the detector.
-%		The visualised data can come both from acquired files (which in turn can contain either real data at various degrees of processing or the output of Monte-Carlo simulations) and directly from the detector.
-%		This kind of visualisation is typically fairly qualitative but it is very useful to perform a quick eyescan of data, or - quite a common scenario - to monitor live whether the detector actually acquires data properly.
-%		\\
-%		\hline
-%		\textit{Participating actor instances} & 
-%		\underline{:}\\
-%		\hline
-%		\textit{Flow of events} & 
-%		A typical event viewer is a standalone ROOT application in which ROOT
-%		handles everything, from data acquisition (ROOT I/O is pretty much THE
-%		way of loading data files these days, as well as more and more
-%		frequently to stream live data from the detector) through preprocessing
-%		to 3D visualisation (it isn't always 3D but again, it has been more and
-%		more common). Obviously this somewhat limits portability of the viewer -
-%		one must have all the dependencies installed, and in case of live
-%		streaming it is necessary to both be able to access the data source
-%		(which can use dedicated readout hardware, and even if it is on the
-%		network it is typically highly access-restricted) and process incoming
-%		data in a timely manner. Conversely, making the viewer a Web application
-%		means it could be split into the back-end, server part, with access to
-%		the data source and enough resources to handle the required number
-%		crunching, and the front-end, client part, depending only on a fairly
-%		standard piece of software that is a modern-enough Web browser, and
-%		responsible only for visualisation itself and interaction with the user.
-%		The former could publish its data e.g. as JSON over RESTful HTTP or
-%		WebSockets, the latter could render it locally e.g. using WebGL.
-%		\begin{enumerate}
-%			\item event
-%			\item action
-%			\item event
-%		\end{enumerate}
-%		\\
-%		\hline
-%	\end{longtable}
-%	\caption{The X scenario for the use case Y}
-%\end{figure}
+\begin{figure}[htb]
+	\centering
+	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
+		\hline
+		\textit{Scenario Name} & \underline{eventViewer}\\
+		\hline
+		\textit{Abstract} &
+		EventViewer providing a visualisation of experimental data, showing signals particles have produced in the detector.
+		The visualised data can come both from acquired files (which in turn can contain either real data at various degrees of processing or the output of Monte-Carlo simulations) and directly from the detector.
+		This kind of visualisation is typically fairly qualitative but it is very useful to perform a quick eyescan of data, or - quite a common scenario - to monitor live whether the detector actually acquires data properly.
+		\\
+		\hline
+		\textit{Participating actor instances} & 
+		\underline{:}\\
+		\hline
+		\textit{Flow of events} &
+		\begin{enumerate}
+			\item data acquisition
+			\item preprocessing
+			\item 3D visualisation
+			\item stream live data from the detector
+			\begin{enumerate}
+				\item access the data source (which can use dedicated readout hardware, and even if it is on the network it is typically highly access-restricted)
+				\item process incoming data in a timely manner
+			\end{enumerate}
+			\item publish its data e.g. as JSON over RESTful HTTP or WebSockets
+			\item web browser for visualisation itself and interaction with the user.
+			\item render it locally e.g. using WebGL.
+		\end{enumerate}
+		\\
+		\hline
+	\end{longtable}
+	\caption{The X scenario for the use case Y}
+\end{figure}
