@@ -49,33 +49,32 @@ we decided to give some examples on how the bindings might be used.
 	\centering
 	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
 		\hline
-		\textit{Scenario Name} & \underline{eventViewer}\\
+		\textit{Scenario Name} & \underline{EventViewer}\\
 		\hline
 		\textit{Abstract} &
-		EventViewer providing a visualisation of experimental data, showing signals particles have produced in the detector.
-		The visualised data can come both from acquired files (which in turn can contain either real data at various degrees of processing or the output of Monte-Carlo simulations) and directly from the detector.
-		This kind of visualisation is typically fairly qualitative but it is very useful to perform a quick eyescan of data, or - quite a common scenario - to monitor live whether the detector actually acquires data properly.
+		A Web based event viewer providing a visualisation of experimental data, showing signals particles have produced in the detector.
+		The web viewer is split into the back-end, server part, with access to
+	    the data source and enough resources to process the data, and the front-end, client part, that is a modern-enough Web browser, and responsible only for visualisation itself and interaction with the user.
 		\\
 		\hline
 		\textit{Participating actor instances} & 
-		\underline{:}\\
+		\underline{Server:Node.js Application}; \underline{:ROOT}; \underline{EventViewer:Browser}; \underline{:rootJS}\\
 		\hline
 		\textit{Flow of events} &
 		\begin{enumerate}
-			\item data acquisition
-			\item preprocessing
-			\item 3D visualisation
-			\item stream live data from the detector
+			\item EventViewer requests visual updates from Server.
+			\item Server interfaces with ROOT via rootJS.
+			\item ROOT acquires data from external source.
 			\begin{enumerate}
-				\item access the data source (which can use dedicated readout hardware, and even if it is on the network it is typically highly access-restricted)
-				\item process incoming data in a timely manner
+					\item External, dedicated readout hardware is used to access the data source.
+					\item ROOT processes incoming data in a timely manner.
 			\end{enumerate}
-			\item publish its data e.g. as JSON over RESTful HTTP or WebSockets
-			\item web browser for visualisation itself and interaction with the user.
-			\item render it locally e.g. using WebGL.
+			\item ROOT passes the data prepared for (3D) visualisation to the Server via rootJS.
+			\item Server publishes its data as JSON stream over the web.
+			\item EventViewer renders received data locally e.g. using WebGL.
 		\end{enumerate}
 		\\
 		\hline
 	\end{longtable}
-	\caption{The X scenario for the use case Y}
+	\caption{EventViewer scenario}
 \end{figure}
