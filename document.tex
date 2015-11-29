@@ -1,20 +1,18 @@
 \documentclass[oneside,a4paper]{report}
 \usepackage{color}
 \usepackage{longtable}
-\usepackage{titlesec}
+\usepackage[pagestyle]{titlesec}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage[headheight=33pt,margin=0.7in,top=1.5in,bottom=1in,right=1in,left=1in]{geometry}
 
 \hypersetup{colorlinks=true,linktoc=none,citecolor=black,urlcolor=blue}
 \hypersetup{linktocpage=false,linkcolor=black}
 
-\pagestyle{fancy}
-\fancypagestyle{plain}{
-	\rhead{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+\newpagestyle{mystyle}{
+        \headrule\sethead{\chapername\ \thechapter. \chaptertitle}{}{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+        \setfoot{{}{\thepage}{}}
 }
-
+\pagestyle{mystyle}
 
 \renewcommand{\arraystretch}{2}
 
