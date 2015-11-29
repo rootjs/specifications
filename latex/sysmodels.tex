@@ -4,8 +4,7 @@
 
 \section{Use Cases}
 \begin{figure}[htb]
-	\centering
-	As stated in 6.1 the bindings don't add functionality. We 
+As stated in 6.1 the bindings don't add functionality. We 
 therefore opted to represent the three most basic functions a nodeJS 
 client application may access through our bindings. How and in what 
 context these functions are called is up to the respective applications. 
@@ -42,7 +41,12 @@ A sample process of interfacing with a ROOT object using this architecture is sh
 \pagebreak
 
 \section{Dynamic Models}
+<<<<<<< HEAD
 The following figure shows how rootJS gets initialized after being called the first time by a client application. As bindings do not add any functionality of their own, the client application is not further specified. After the bindings are initialized the client application may use any ROOT functionality through a \textit{ROOTPrototype} object provided by the rootJS API.
+=======
+\subsection{Startup sequence}
+The following figure shows how rootJS initializes upon being called the first time by a client application. As bindings do not add any functionality of their own, the client application is not further specified. After the bindings are initialized the client application may use any ROOT functionality through a \textit{ROOTPrototype} object provided by the rootJS API.
+>>>>>>> 3a16fad31714fd663810263ad9e7140121165274
 
 \begin{figure}[htb]
 	\centering
@@ -50,7 +54,12 @@ The following figure shows how rootJS gets initialized after being called the fi
 	\caption{basic startup sequence}
 \end{figure}
 \pagebreak
+<<<<<<< HEAD
 The following figure shows how to open a root file via rootJS. After the usual initialization process has been completed (see above), a TFile object is created using the rootJS API. A callback is provided because the file is being parsed by ROOT during the opening process, which might take some time depending on file size and complexity. The rootJS bindings call the TFile constructor before returning to the JavaScript application via callback, and the constructor is being called by the class proxy. After the construction phase rootJS has a valid TFile object, which is then handed over to the CreateProxyObject factory method which creates the correct proxy object. The factory object recursively creates a v8 handle which is returned to the JavaScript code running in node.JS, in this case via callback.
+=======
+\subsection{Opening a file}
+The following figure shows how to open a root file via rootJS, after the usual initialization process has been completet (see above) a TFile object is beeing created using the rootJS API. A callback is provided because the file is beeing parsed by ROOT during the opening process, which might take some time depending on file size and complexity. The rootJS bindings call the TFile constructor before returning to the JavaScript application via callback, the constructor is beeing called by the class proxy. After the construction phase rootJS has a valid TFile object, which is then handed over to the CreateProxyObject factory method which creates the correct proxy object. The factory object recursively creates a v8 handle which is returned to the JavaScript code running in node, in this case via callback.
+>>>>>>> 3a16fad31714fd663810263ad9e7140121165274
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=18cm]{./latex/resources/fileOpen.png}
