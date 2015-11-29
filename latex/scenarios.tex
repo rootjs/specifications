@@ -16,7 +16,7 @@ between an Application and ROOT.
 		\textit{Scenario Name} & \underline{WebViewer}\\
 		\hline
 	
-		\textit{Abstract} & A browser based GUI for realtime representation of root graphs.\\
+		\textit{Abstract} & A browser based GUI for realtime representation of \texttt{ROOT} graphs.\\
 		\hline
 	
 		\textit{Participating actor instances} & \underline{WebViewer:Node.js}; \underline{:ROOT}; \underline{:rootJS}\\
@@ -24,22 +24,22 @@ between an Application and ROOT.
 	
 		\textit{Flow of events} & 
 		\begin{enumerate}
-			\item rootJS is up and running initialize has already been executed.
+			\item \texttt{rootJS} is up and running initialize has already been executed.
 			
-			\item WebViewer calls the API method to get graphical output of the data ROOT has currently loaded.
+			\item \texttt{WebViewer} calls the API method to get graphical output of the data \texttt{ROOT} has currently loaded.
 				\begin{enumerate}
-					\item rootJS processes the request and calls the corresponding ROOT functionality.
-					\item rootJS receives ROOT output and streams it to WebViewer.
+					\item \texttt{rootJS} processes the request and calls the corresponding \texttt{ROOT} functionality.
+					\item \texttt{rootJS} receives \texttt{ROOT} output and streams it to \texttt{WebViewer}.
 				\end{enumerate}
-			\item WebViewer uses the provided data to display the graph on its GUI.
+			\item \texttt{WebViewer} uses the provided data to display the graph on its GUI.
 				\begin{enumerate}
-					\item Node.js invokes ROOT I/O operations.
+					\item \texttt{Node.js} invokes \texttt{ROOT} I/O operations.
 						\begin{enumerate}
-							\item ROOT loads data and provides raw visualization data.
+							\item \texttt{ROOT} loads data and provides raw visualization data.
 						\end{enumerate}
-					\item Node.js serializes data and streams it to WebViewer.
+					\item \texttt{Node.js} serializes data and streams it to \texttt{WebViewer}.
 				\end{enumerate}
-			\item WebViewer receives data and renders it in the browser.
+			\item \texttt{WebViewer} receives data and renders it in the browser.
 		\end{enumerate}
 		\\
 		\hline
@@ -70,16 +70,16 @@ between an Application and ROOT.
 		\hline
 		\textit{Flow of events} &
 		\begin{enumerate}
-			\item EventViewer requests visual updates from Server.
-			\item Server interfaces with ROOT via rootJS.
-			\item ROOT acquires data from external source.
+			\item \texttt{EventViewer} requests visual updates from \texttt{Server}.
+			\item \texttt{Server} interfaces with \texttt{ROOT} via \texttt{rootJS}.
+			\item \texttt{ROOT} acquires data from external source.
 			\begin{enumerate}
 					\item External, dedicated readout hardware is used to access the data source.
-					\item ROOT processes incoming data in a timely manner.
+					\item \texttt{ROOT} processes incoming data in a timely manner.
 			\end{enumerate}
-			\item ROOT passes the data prepared for (3D) visualisation to the Server via rootJS.
-			\item Server publishes its data as JSON stream over the web.
-			\item EventViewer renders received data locally e.g. using WebGL.
+			\item \texttt{ROOT} passes the data prepared for (3D) visualisation to the \texttt{Server} via \texttt{rootJS}.
+			\item \texttt{Server} publishes its data as JSON stream over the web.
+			\item \texttt{EventViewer} renders received data locally e.g. using WebGL.
 		\end{enumerate}
 		\\
 		\hline

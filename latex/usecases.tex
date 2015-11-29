@@ -5,20 +5,18 @@
 	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
 		\hline
 		
-		\textit{Use Case name} & UseROOTConstant\\
+		\textit{Use Case name} & \texttt{UseROOTConstant}\\
 		\hline
 		
-		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}
-                Processed by \texttt{rootJS}
-                Communicates with \texttt{ROOT6}\\
+		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}; Communicates with \texttt{ROOT}\\
 		\hline
 		
 		\textit{Flow of events} &
 			\begin{enumerate}
-				\item The \texttt{NodeJSApplication} requests access to a ROOT constant
-				\item \texttt{rootJS} sends a request to the corresponding ROOT constant
-				\item \texttt{ROOT6} returns the requested value
-	                        \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}
+				\item The \texttt{NodeJSApplication} requests access to a ROOT constant.
+				\item \texttt{rootJS} sends a request to the corresponding ROOT constant.
+				\item \texttt{ROOT} returns the requested value.
+	                        \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}.
 			\end{enumerate}
 			\\
 		\hline
@@ -32,3 +30,81 @@
 	
 	\caption{Use Case: UseROOTConstant}
 \end{figure}
+\pagebreak
+\subsection{Use Case 2: UseROOTClass}
+
+\begin{figure}[htb]
+	\centering
+	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
+		\hline
+		
+		\textit{Use Case name} & UseROOTClass\\
+		\hline
+		
+		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}
+                Processed by \texttt{rootJS}, ProxyObject
+                Communicates with \texttt{ROOT}\\
+		\hline
+		
+		\textit{Flow of events} &
+			\begin{enumerate}
+				\item The \texttt{NodeJSApplication}  requests access to a ROOT class by calling a constructor
+				\item \texttt{rootJS} sends a request to the corresponding ROOT class
+				\item \texttt{ROOT}  responds
+				\item \texttt{rootJS} is allowed to create a ProxyObject of the requested
+				ROOT class
+				\item \texttt{rootJS} stores the ProxyObject in the cache
+				\item \texttt{rootJS} returns the reference of the ProxyObject to the 
+				\texttt{NodeJSApplication}
+			\end{enumerate}
+			\\
+		\hline
+		
+		\textit{Entry condition} & \texttt{rootJS} has been initialized\\
+		\hline
+		
+		\textit{Exit condition} & The reference of the ProxyObject has been return to the NodeJSApplication\\
+        \hline
+	\end{longtable}
+	
+	\caption{Use Case: UseROOTClass}
+\end{figure}
+\pagebreak
+\subsection{Use Case 3: UseROOTFunction}
+
+\begin{figure}[htb]
+	\centering
+	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
+		\hline
+		
+		\textit{Use Case name} & UseROOTFunction\\
+		\hline
+		
+		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}
+                Processed by \texttt{rootJS}, ProxyObject
+                Communicates with \texttt{ROOT}\\
+		\hline
+		
+		\textit{Flow of events} &
+			\begin{enumerate}
+				\item The \texttt{NodeJSApplication}  requests access to a ROOT function
+				\item \texttt{rootJS} sends a request to the corresponding ROOT function
+				\item \texttt{ROOT}  responds
+				\item \texttt{rootJS} is allowed to create a ProxyObject of the class where the requested ROOT function is located
+				\item The ProxyObject calls the requested ROOT function
+				\item \texttt{rootJS} returns the output of the function ProxyObject to the 
+				\texttt{NodeJSApplication}
+			\end{enumerate}
+			\\
+		\hline
+		
+		\textit{Entry condition} & \texttt{rootJS} has been initialized\\
+		\hline
+		
+		\textit{Exit condition} & The reference of the ProxyObject has been return to the NodeJSApplication\\
+        \hline
+	\end{longtable}
+	
+	\caption{Use Case: UseROOTFunction}
+\end{figure}
+
