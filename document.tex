@@ -5,14 +5,18 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
-\usepackage[headheight=33pt,margin=0.7in,top=1.5in,bottom=1in,right=1in,left=1in]{geometry}
+\usepackage[headheight=25pt,margin=0.7in,top=1.5in,bottom=1in,right=1in,left=1in]{geometry}
 
 \hypersetup{colorlinks=true,linktoc=none,citecolor=black,urlcolor=blue}
 \hypersetup{linktocpage=false,linkcolor=black}
 
 \pagestyle{fancy}
+\fancyhead[R]{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+\fancyhead[L]{\leftmark}
+
 \fancypagestyle{plain}{
-	\rhead{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+        \rhead{\includegraphics[width=2cm]{./latex/resources/kitlogo.png}}
+        \lhead{\leftmark}
 }
 
 
