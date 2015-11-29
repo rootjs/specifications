@@ -36,7 +36,7 @@ between such an app and root.
 
 \section{Object Models}
 Figure 6.2 illustrates what the rootJS architecture may look like.
-Client applications relying on this architecture will incorporate with the ROOT framework through a \textit{ROOTPrototype} object. 
+Client applications relying on this architecture will incorporate with the ROOT framework through a \textit{ROOTPrototype} object.
 The API's entry point method \textit{ROOTPrototype::init} uses V8 to create the actual interface to the available variables, functions and classes of ROOT.\\
 Functions provided through this interface internally call \textit{methodProxy} to determine the associated ROOT function via the callee's function name. This allows handling of supplied callback functions by passing them over the \textit{args} parameter.\\
 Constructor functions provided through the interface internally call \textit{classProxy} instead of \textit{methodProxy} to generate encapsulating JavaScript objects through the \textit{ProxyObjectFactory}.
@@ -65,6 +65,7 @@ The following figure shows how rootJS initializes upon being called the first ti
 	\caption{basic startup sequence}
 \end{figure}
 
+The following figure shoes how to open a root file via rootJS, after the usual initialization process has been completet (see above) a TFile object is beeing created using the rootJS API. A callback is provided because the file is beeing parsed by ROOT during the opening process, which might take some time depending on file size and complexity. The rootJS bindings call the TFile constructor before returning to the JavaScript application via callback, the constructor is beeing called by the class proxy. After the construction phase rootJS has a valid TFile object, which is then handed over to the CreateProxyObject factory method which creates the correct proxy object. The factory object recursively creates a v8 handle which is returned to the JavaScript code running in node, in this case via callback.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=18cm]{./latex/resources/fileOpen.png}
