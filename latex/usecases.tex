@@ -24,7 +24,7 @@
 			\\
 		\hline
 		
-		\textit{Entry condition} & {rootJS} has been initialized.\\
+		\textit{Entry condition} & \texttt{rootJS} has been initialized.\\
 		\hline
 		
 		\textit{Exit condition} & The value has been returned to the \texttt{NodeJSApplication}.\\
@@ -53,11 +53,9 @@
 		\textit{Flow of events} &
 			\begin{enumerate}
 				\item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} object by calling a constructor function.
-				\item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} object.
-				\item \texttt{ROOT} responds.
-				\item \texttt{rootJS} is allowed to create a \texttt{ProxyObject} of the requested \texttt{ROOT} object.
+				\item \texttt{rootJS} encapsulates the requested \texttt{ROOT} object within a \texttt{ProxyObject} that was created recursively.
 				\item \texttt{rootJS} stores the created \texttt{ProxyObject} in a cache memory.
-				\item \texttt{rootJS} returns the reference of the \texttt{ProxyObject} to the \texttt{NodeJSApplication}.
+				\item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
 			\end{enumerate}
 			\\
 		\hline
@@ -91,17 +89,15 @@
 		
 		\textit{Flow of events} &
 			\begin{enumerate}
-				\item The \texttt{NodeJSApplication}  requests access to a \texttt{ROOT} function.
+				\item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} function.
 				
-				\item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} function.
+				\item \texttt{rootJS} calls the corresponding \texttt{ROOT} function.
 				
 				\item \texttt{ROOT} responds.
 				
-				\item \texttt{rootJS} is allowed to create a \texttt{ProxyObject} of the class where the requested \texttt{ROOT} function is located.
+				\item \texttt{rootJS} encapsulates the returned \texttt{ROOT} object within a \texttt{ProxyObject}.
 				
-				\item The \texttt{ProxyObject} calls the requested \texttt{ROOT} function.
-				
-				\item \texttt{rootJS} returns the output of the function \texttt{ProxyObject} to the \texttt{NodeJSApplication}.
+				\item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
 			\end{enumerate}
 			\\
 		\hline
