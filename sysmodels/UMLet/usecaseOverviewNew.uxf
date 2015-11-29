@@ -43,7 +43,7 @@ halign=left</panel_attributes>
       <w>150</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>useRootConstant</panel_attributes>
+    <panel_attributes>useRootGlobal</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -54,7 +54,7 @@ halign=left</panel_attributes>
       <w>120</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>useRootClass</panel_attributes>
+    <panel_attributes>useRootObject</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
