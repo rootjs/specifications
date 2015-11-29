@@ -141,18 +141,6 @@ graphical output</panel_attributes>
     <additional_attributes>10.0;52.0;260.0;50.0;260.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>610</x>
-      <y>450</y>
-      <w>100</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLActor</id>
     <coordinates>
       <x>300</x>
