@@ -16,7 +16,7 @@
 \pagebreak[4]
 
 \section{Object Models}
-Figure 6.2 illustrates what the rootJS architecture may look like.
+Figure 6.7 illustrates what the rootJS architecture may look like.
 Client applications relying on this architecture will incorporate with the ROOT framework through a \textit{ROOTPrototype} object.
 The API's entry point method \textit{ROOTPrototype::init} uses V8 to create the actual interface to the available variables, functions and classes of ROOT.\\
 Functions provided through this interface internally call \textit{methodProxy} to determine the associated ROOT function via the callee's function name. This allows handling of supplied callback functions by passing them over the \textit{args} parameter.\\
@@ -35,7 +35,6 @@ A sample process of interfacing with a ROOT object using this architecture is sh
 	\caption{basic architecture draft}
 \end{figure}
 
-\pagebreak[4]
 
 \section{Dynamic Models}
 The following figure shows how rootJS initializes upon being called the first time by a client application. As bindings do not add any functionality of their own, the client application is not further specified. After the bindings are initialized the client application may use any ROOT functionality through a \textit{ROOTPrototype} object provided by the rootJS API.
