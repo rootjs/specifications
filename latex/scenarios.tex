@@ -1,7 +1,11 @@
 \section{Scenarios}
 
-Our bindings do not add to the core functionality of ROOT. Therefore 
-we decided to give some examples on how the bindings might be used.
+The bindings do not affect core functionality of ROOT. Therefore 
+we decided to give some examples on how the bindings might be used. The 
+user in this case is a Node.js based application, that uses the rootJS bindings 
+to interact with ROOT. As the actual implementation is not yet 
+finalized, the scenarios only contain samples of simple interactions 
+between an Application and ROOT.
 
 \begin{figure}[htb]
 	\centering
@@ -24,9 +28,9 @@ we decided to give some examples on how the bindings might be used.
 			\item WebViewer calls the API method to get graphical output of the data ROOT has currently loaded.
 				\begin{enumerate}
 					\item rootJS processes the request and calls the corresponding ROOT functionality.
-					\item rootJS receives ROOT output and streams it to WebViewer
+					\item rootJS receives ROOT output and streams it to WebViewer.
 				\end{enumerate}
-			\item WebViewer uses the provided data to display the graph on its GUI
+			\item WebViewer uses the provided data to display the graph on its GUI.
 				\begin{enumerate}
 					\item Node.js invokes ROOT I/O operations.
 						\begin{enumerate}
@@ -44,6 +48,8 @@ we decided to give some examples on how the bindings might be used.
 	\caption{WebViewer scenario}
 	
 \end{figure}
+
+\pagebreak[4]
 
 \begin{figure}[htb]
 	\centering
