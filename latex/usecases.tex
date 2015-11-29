@@ -1,23 +1,34 @@
 \subsection{Use Case 1: UseROOTConstant}
-\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
-	\hline
-	\textit{Use Case name} & UseROOTConstant\\
-	\hline
-	\textit{Participating actors} & Initiated by \texttt{NodeJSApplication}
+
+\begin{figure}[htb]
+	\centering
+	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
+		\hline
+		
+		\textit{Use Case name} & UseROOTConstant\\
+		\hline
+		
+		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}
                 Processed by \texttt{rootJS}
                 Communicates with \texttt{ROOT6}\\
-	\hline
-	\textit{Flow of events} &
-		\begin{enumerate}
-			\item The \texttt{NodeJSApplication} requests access to a ROOT constant
-			\item \texttt{rootJS} sends a request to the corresponding ROOT constant
-			\item \texttt{ROOT6} returns the requested value
-                        \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}
-		\end{enumerate}
-		\\
-	\hline
-	\textit{Entry condition} & \texttt{rootJS} has been initialized\\
-	\hline
-	\textit{Exit condition} & The value has been returned to the NodeJSApplication\\
+		\hline
+		
+		\textit{Flow of events} &
+			\begin{enumerate}
+				\item The \texttt{NodeJSApplication} requests access to a ROOT constant
+				\item \texttt{rootJS} sends a request to the corresponding ROOT constant
+				\item \texttt{ROOT6} returns the requested value
+	                        \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}
+			\end{enumerate}
+			\\
+		\hline
+		
+		\textit{Entry condition} & \texttt{rootJS} has been initialized\\
+		\hline
+		
+		\textit{Exit condition} & The value has been returned to the NodeJSApplication\\
         \hline
-\end{longtable}
+	\end{longtable}
+	
+	\caption{Use Case: UseROOTConstant}
+\end{figure}
