@@ -112,3 +112,40 @@
 	\caption{UseROOTFunction}
 \end{figure}
 
+\pagebreak
+
+\subsection{UseJIT}
+
+\begin{figure}[htb]
+	\centering
+	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
+		\hline
+		
+		\textit{Use Case name} & \texttt{UseJIT}\\
+		\hline
+		
+		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}; Communicates with \texttt{ROOT}\\
+		\hline
+		
+		\textit{Flow of events} &
+		\begin{enumerate}
+			\item The \texttt{NodeJSApplication} requests access to a global variable of \texttt{ROOT}.
+			
+			\item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} variable.
+			
+			\item \texttt{ROOT} returns the requested variable value.
+			
+			\item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}.
+		\end{enumerate}
+		\\
+		\hline
+		
+		\textit{Entry condition} & \texttt{rootJS} has been initialized.\\
+		\hline
+		
+		\textit{Exit condition} & The value has been returned to the \texttt{NodeJSApplication}.\\
+		\hline
+	\end{longtable}
+	
+	\caption{Use Case: just-in-time compilation}
+\end{figure}
