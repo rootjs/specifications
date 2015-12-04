@@ -21,6 +21,12 @@ During the development process continuous integration tools will be used to run 
   \hline
   /T90/ & Create instances of classes with private constructors and ensure the correct exception is thrown.\\
   \hline
-  /T100/ &  Apply the test cases described in /T60/ to /T90/ to static members and methods. Ensure correct exceptions are thrown.\\
-   \hline
+  /T100/ &  Apply the test cases described in /T60/ to /T90/ to static members and methods. Ensure the correct exceptions are thrown.\\
+  \hline
+  /T110/ & Let Cling evaluate strings of valid C++ code during run time and ensure ROOT's state wad modified as expected.\\
+  \hline
+  /T120/ & Let Cling evaluate strings of syntactically invalid C++ code during run time and ensure the right exceptions are thrown and forwarded correctly.\\
+  \hline
+  /T130/ & Let Cling evaluate strings of semantically invalid C++ code during run time and ensure the right exceptions are thrown and forwarded correctly.\\
+  \hline
 \end{longtable}

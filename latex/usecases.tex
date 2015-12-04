@@ -4,34 +4,34 @@
 	\centering
 	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
 		\hline
-		
-		\textit{Use Case name} & \texttt{UseROOTGlobal}\\
+
+		\textit{Use case name} & \texttt{UseROOTGlobal}\\
 		\hline
-		
+
 		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}; Communicates with \texttt{ROOT}\\
 		\hline
-		
+
 		\textit{Flow of events} &
 			\begin{enumerate}
 				\item The \texttt{NodeJSApplication} requests access to a global variable of \texttt{ROOT}.
-			
+
 				\item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} variable.
-			
+
 				\item \texttt{ROOT} returns the requested variable value.
-	          
+
 	            \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}.
 			\end{enumerate}
 			\\
 		\hline
-		
+
 		\textit{Entry condition} & \texttt{rootJS} has been initialized.\\
 		\hline
-		
+
 		\textit{Exit condition} & The value has been returned to the \texttt{NodeJSApplication}.\\
         \hline
 	\end{longtable}
-	
-	\caption{Use Case: UseROOTGlobal}
+
+	\caption{Use case: UseROOTGlobal}
 \end{figure}
 
 \pagebreak
@@ -42,14 +42,14 @@
 	\centering
 	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
 		\hline
-		
-		\textit{Use Case name} & \texttt{UseROOTObject}\\
+
+		\textit{Use case name} & \texttt{UseROOTObject}\\
 		\hline
-		
-		\textit{Participating actor instances} & 
+
+		\textit{Participating actor instances} &
 		Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{ProxyObject}; Communicates with \texttt{ROOT}\\
 		\hline
-		
+
 		\textit{Flow of events} &
 			\begin{enumerate}
 				\item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} object by calling a constructor function.
@@ -59,15 +59,15 @@
 			\end{enumerate}
 			\\
 		\hline
-		
+
 		\textit{Entry condition} & \texttt{rootJS} has been initialized.\\
 		\hline
-		
+
 		\textit{Exit condition} & The reference of the \texttt{ProxyObject} has been return to the \texttt{NodeJSApplication}.\\
         \hline
 	\end{longtable}
-	
-	\caption{Use Case: UseROOTObject}
+
+	\caption{Use case: UseROOTObject}
 \end{figure}
 
 \pagebreak
@@ -78,74 +78,76 @@
 	\centering
 	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
 		\hline
-		
-		\textit{Use Case name} & \texttt{UseROOTFunction}\\
+
+		\textit{Use case name} & \texttt{UseROOTFunction}\\
 		\hline
-		
+
 		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication};
                 Processed by \texttt{rootJS}, \texttt{ProxyObject};
                 Communicates with \texttt{ROOT}\\
 		\hline
-		
+
 		\textit{Flow of events} &
 			\begin{enumerate}
 				\item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} function.
-				
+
 				\item \texttt{rootJS} calls the corresponding \texttt{ROOT} function.
-				
+
 				\item \texttt{ROOT} responds.
-				
+
 				\item \texttt{rootJS} encapsulates the returned \texttt{ROOT} object within a \texttt{ProxyObject}.
-				
+
 				\item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
 			\end{enumerate}
 			\\
 		\hline
-		
+
 		\textit{Entry condition} & \texttt{rootJS} has been initialized.\\
 		\hline
-		
+
 		\textit{Exit condition} & The reference of the \texttt{ProxyObject} has been return to the \texttt{NodeJSApplication}.\\
         \hline
 	\end{longtable}
-	
-	\caption{UseROOTFunction}
+
+	\caption{Use case: UseROOTFunction}
 \end{figure}
 
 \pagebreak
 
-\subsection{UseJIT}
+\subsection{UseJIT (Cling)}
 
 \begin{figure}[htb]
 	\centering
 	\begin{longtable}{p{3cm} @{\hskip 1cm} p{12cm}}
 		\hline
-		
+
 		\textit{Use Case name} & \texttt{UseJIT}\\
 		\hline
-		
-		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}; Communicates with \texttt{ROOT}\\
+
+		\textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{Cling}; Communicates with \texttt{ROOT}\\
 		\hline
-		
+
 		\textit{Flow of events} &
 		\begin{enumerate}
-			\item The \texttt{NodeJSApplication} requests access to a global variable of \texttt{ROOT}.
-			
-			\item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} variable.
-			
-			\item \texttt{ROOT} returns the requested variable value.
-			
-			\item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}.
+			\item The \texttt{NodeJSApplication} wants to execute \texttt{ROOT} specific C++ code (given as string) during runtime.
+
+			\item \texttt{rootJS} forwards the instructions to \texttt{Cling}.
+
+			\item \texttt{Cling} evaluates the received instructions using JIT concepts and dynamically modifies the state of \texttt{ROOT}.
+
+			\item \texttt{rootJS} takes care of encapsulating exceptions possibly thrown by \texttt{Cling} or \texttt{ROOT} during evaluation and execution.
+
+			\item \texttt{rootJS} provides the evaluation results and corresponding return values to the \texttt{NodeJSApplication}.
 		\end{enumerate}
 		\\
 		\hline
-		
-		\textit{Entry condition} & \texttt{rootJS} has been initialized.\\
+
+		\textit{Entry condition} & \texttt{rootJS} and \texttt{Cling} have been initialized.\\
 		\hline
-		
-		\textit{Exit condition} & The value has been returned to the \texttt{NodeJSApplication}.\\
+
+		\textit{Exit condition} & \texttt{rootJS} either confirms the proper execution of the specified instructions or forwards thrown exceptions to the \texttt{NodeJSApplication}.\\
 		\hline
 	\end{longtable}
-	
+
 	\caption{Use Case: just-in-time compilation}
 \end{figure}
