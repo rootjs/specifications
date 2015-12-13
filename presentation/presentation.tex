@@ -48,17 +48,22 @@
 % \usepackage{templates/tikzuml}
 
 % the presentation starts here
+\usepackage{caption}
+\usepackage{subcaption}
+
+\setbeamercovered{invisible}  % non transparent overlay
 
 \title[rootJS]{rootJS - Specification}
 \subtitle{PSE - Software Engineering Practice}
-\author{Christoph Wolff, Maxi Fr\"uh, Sachin Rajgopal,\\ Christoph Haas, Jonas Schwabe, Theo Beffart}
+\author{C. Wolff, M. Fr\"uh, S. Rajgopal, C. Haas, J. Schwabe, T. Beffart}
+%\author{Christoph Wolff, Maxi Fr\"uh, Sachin Rajgopal, Christoph Haas, Jonas Schwabe, Theo Beffart}
 
 \institute{Steinbruch Center for Computing}
 
 % Bibliography
 
 \usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
+\addbibresource{resources/references.bib}
 \bibhang1em
 
 \begin{document}
@@ -77,10 +82,12 @@
 \end{frame}
 
 \input{./sections/environment.tex}
+\input{./sections/scenarios.tex}
+\input{./sections/usecases.tex}
 \input{./sections/sysmodel.tex}
 
 % show basic slide features; will be removed later
-\input{./sections/dummy_section.tex}
+% \input{./sections/dummy_section.tex}
 
 \appendix
 \beginbackup
