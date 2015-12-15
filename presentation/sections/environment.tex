@@ -50,13 +50,13 @@
     \end{subfigure}%
     \begin{subfigure}[b]{0.33\textwidth}
       \uncover<2->{
-      \includegraphics[width=\linewidth, keepaspectratio]{./resources/v8.png}
+        \includegraphics[width=\linewidth, keepaspectratio]{./resources/v8.png}
       }
       \nocite{google:v8:logo}
     \end{subfigure}%
     \begin{subfigure}[b]{0.33\textwidth}
       \uncover<3->{
-      \includegraphics[width=\linewidth, keepaspectratio]{./resources/npm.png}
+        \includegraphics[width=\linewidth, keepaspectratio]{./resources/npm.png}
       }
       \nocite{npm:logo}
       \vspace{5mm}
@@ -67,5 +67,15 @@
 
 \subsection{Hardware}
 \begin{frame}{Hardware}
-
+  \begin{itemize}
+    \item Task: encapsulation of ROOT objects and functions
+    \begin{itemize}
+      \item[$\rightarrow$] \textcolor{kit-blue100}{scanning ROOT structures during initialization}
+      \item[$\rightarrow$] \textcolor{kit-blue100}{encapsulating objects with heavily nested object structures}
+      \item[$\rightarrow$] \textcolor{kit-green70}{introduce (proxy) object cache}
+    \end{itemize}
+    \vspace{10mm}
+    \pause
+    \item[$\Rightarrow$] generally negligible hardware requirements of the bindings themselves
+  \end{itemize}
 \end{frame}
