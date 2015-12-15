@@ -1,36 +1,3 @@
 \section{System Model}
-\subsection{Initialization}
-\begin{frame}{Initialization}
-  \begin{itemize}
-    \item Expose all
-    \begin{itemize}
-      \item Global variables
-      \item Global functions
-      \item Classes
-    \end{itemize}
-    \pause
-    \item Each are bound to corresponding proxy methods
-    \item An object which members are the exposed features is beeing passed to node
-  \end{itemize}
-  \pause
-  \begin{block}{Names}
-    \begin{itemize}
-      \item Functions and classes have the same name as in Root
-      \item Global variables can be called using Get[Variable] and Set[Variable] methods
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\subsection{Call a feature}
-\begin{frame}{Call a feature}
-  \begin{itemize}
-    \item All features in node are mapped to a proxy method that will be called
-    \pause
-    \item The proxy method will eventually call a root function and pass the result to our ObjectFactory
-    \pause
-    \item By looking at the object type an corresponding v8::Handle will be generated and returned to node
-    \begin{itemize}
-      \item If the result is an object this will be done recursively
-    \end{itemize}
-  \end{itemize}
-\end{frame}
+\input{./sections/objectmodel.tex}
+\input{./sections/dynamicmodel.tex}

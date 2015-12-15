@@ -1,0 +1,30 @@
+\section{Statistics}
+
+\begin{frame}{Merges}
+        \begin{tikzpicture}
+                \begin{axis}[
+                     width  = 12cm,
+                     hide y axis,
+                     axis x line*=bottom,
+                     height = 5cm,
+                     bar width=20pt,
+                     symbolic x coords={C. Wolff, C. Haas, Jonas, Maxi, Sachin, Theo},
+                     nodes near coords,
+                     ymin=0
+                     ]
+                     \addplot[ybar, fill=black] coordinates {
+                          (C. Wolff,15)
+                          (C. Haas,22)
+                          (Jonas,9)
+                          (Maxi,3)
+                          (Sachin,13)
+                          (Theo,20)
+                     };
+                \end{axis}
+        \end{tikzpicture}
+        \end{frame}
+
+\begin{frame}{Punchcard}
+        \includegraphics[keepaspectratio,width=12cm]{./resources/punchcard.png} 
+\end{frame}
+        
