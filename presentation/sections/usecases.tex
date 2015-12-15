@@ -1,3 +1,147 @@
 \section{Use Cases}
-\begin{frame}
+
+\begin{frame}{UseROOTGlobal}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \hline
+
+                \textit{Use case name} & \texttt{UseROOTGlobal}\\
+                \hline
+
+                \textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}; Communicates with \texttt{ROOT}\\
+                \hline
+
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \item The \texttt{NodeJSApplication} requests access to a global variable of \texttt{ROOT}.
+                                \item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} variable.
+                                \item \texttt{ROOT} returns the requested variable value.
+                                \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}.
+                        \end{enumerate}
+                        \\
+        \end{longtable}
+\end{frame}
+\begin{frame}[t]{UseROOTGlobal}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \hline
+
+                \textit{Entry condition} & \texttt{rootJS} has been initialized.\\
+                \hline
+
+                \textit{Exit condition} & The value has been returned to the \texttt{NodeJSApplication}.\\
+                \hline
+        \end{longtable}
+\end{frame}
+
+\begin{frame}{UseROOTObject}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \hline
+
+                \textit{Use case name} & \texttt{UseROOTObject}\\
+                \hline
+
+                \textit{Participating actor instances} &
+                Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{ProxyObject}; Communicates with \texttt{ROOT}\\
+                \hline
+
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} object by calling a constructor function.
+                                \item \texttt{rootJS} encapsulates the requested \texttt{ROOT} object within a \texttt{ProxyObject} that was created recursively.
+                        \end{enumerate}
+                        \\
+        \end{longtable}
+\end{frame}
+\begin{frame}[t]{UseROOTObject}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \setcounter{enumi}{2}
+                                \item \texttt{rootJS} stores the created \texttt{ProxyObject} in a cache memory.
+                                \item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
+                        \end{enumerate}
+                        \\
+                \hline
+
+                \textit{Entry condition} & \texttt{rootJS} has been initialized.\\
+                \hline
+
+                \textit{Exit condition} & The reference of the \texttt{ProxyObject} has been return to the \texttt{NodeJSApplication}.\\
+                \hline
+        \end{longtable}
+\end{frame}
+
+\begin{frame}{UseROOTFunction}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \hline
+
+                \textit{Use case name} & \texttt{UseROOTFunction}\\
+                \hline
+
+                \textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{ProxyObject}; Communicates with \texttt{ROOT}\\
+                \hline
+
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} function.
+                                \item \texttt{rootJS} calls the corresponding \texttt{ROOT} function.
+                                \item \texttt{ROOT} responds.
+                        \end{enumerate}
+                        \\
+        \end{longtable}
+\end{frame}
+\begin{frame}[t]{UseROOTFunction}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \setcounter{enumi}{3}
+                                \item \texttt{rootJS} encapsulates the returned \texttt{ROOT} object within a \texttt{ProxyObject}.
+                                \item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
+                        \end{enumerate}
+                       \\
+                \hline
+
+                \textit{Entry condition} & \texttt{rootJS} has been initialized.\\
+                \hline
+
+                \textit{Exit condition} & The reference of the \texttt{ProxyObject} has been return to the \texttt{NodeJSApplication}.\\
+                \hline
+        \end{longtable}
+\end{frame}
+
+\begin{frame}{UseJIT}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \hline
+
+                \textit{Use Case name} & \texttt{UseJIT}\\
+                \hline
+
+                \textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{Cling}; Communicates with \texttt{ROOT}\\
+                \hline
+
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \item The \texttt{NodeJSApplication} wants to execute \texttt{ROOT} specific C++ code (given as string) during runtime.
+                                \item \texttt{rootJS} forwards the instructions to \texttt{Cling}.
+                                \item \texttt{Cling} evaluates the received instructions using JIT compilation concepts and dynamically modifies the state of \texttt{ROOT}.
+                        \end{enumerate}
+                        \\
+        \end{longtable}
+\end{frame}
+\begin{frame}[t]{UseJIT}
+        \begin{longtable}{p{3cm} @{\hskip 1cm} p{7cm}}
+                \textit{Flow of events} &
+                        \begin{enumerate}
+                                \setcounter{enumi}{2}
+                                \item \texttt{rootJS} takes care of encapsulating exceptions possibly thrown by \texttt{Cling} or \texttt{ROOT} during evaluation and execution.
+                                \item \texttt{rootJS} provides the evaluation results and corresponding return values to the \texttt{NodeJSApplication}.
+                        \end{enumerate}
+                        \\
+                \hline
+
+                \textit{Entry condition} & \texttt{rootJS} and \texttt{Cling} have been initialized.\\
+                \hline
+
+                \textit{Exit condition} & \texttt{rootJS} either confirms the proper execution of the specified instructions or forwards thrown exceptions to the \texttt{NodeJSApplication}.\\
+                \hline
+        \end{longtable}
 \end{frame}
