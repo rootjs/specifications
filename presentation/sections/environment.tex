@@ -32,13 +32,8 @@
       \item Develop server side web applications
       \item Act as a stand alone web server
     \end{itemize}
-
-    \uncover<2->{
-      \item Google V8 engine to execute JavaScript code
-    }
-    \uncover<3->{
-      \item rootJS bindings realized as native Node.js module written in C++
-    }
+    \item Google V8 engine to execute JavaScript code
+    \item rootJS bindings realized as native Node.js module written in C++
   \end{itemize}
 
   \begin{figure}[htb]
@@ -49,15 +44,11 @@
       \vspace{10mm}
     \end{subfigure}%
     \begin{subfigure}[b]{0.33\textwidth}
-      \uncover<2->{
         \includegraphics[width=\linewidth, keepaspectratio]{./resources/v8.png}
-      }
       \nocite{google:v8:logo}
     \end{subfigure}%
     \begin{subfigure}[b]{0.33\textwidth}
-      \uncover<3->{
         \includegraphics[width=\linewidth, keepaspectratio]{./resources/npm.png}
-      }
       \nocite{npm:logo}
       \vspace{5mm}
     \end{subfigure}%
@@ -75,7 +66,6 @@
       \item[$\rightarrow$] \textcolor{kit-green70}{Introduce (proxy) object cache}
     \end{itemize}
     \vspace{10mm}
-    \pause
     \item[$\Rightarrow$] Generally negligible hardware requirements of the bindings themselves
   \end{itemize}
 \end{frame}
