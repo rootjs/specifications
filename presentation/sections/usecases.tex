@@ -10,16 +10,20 @@
 
                 \textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}; Communicates with \texttt{ROOT}\\
                 \hline
-                \pause
 
                 \textit{Flow of events} &
                         \begin{enumerate}
+                                \pause
+
                                 \item The \texttt{NodeJSApplication} requests access to a global variable of \texttt{ROOT}.
                                 \pause
+
                                 \item \texttt{rootJS} sends a request to the corresponding \texttt{ROOT} variable.
                                 \pause
+
                                 \item \texttt{ROOT} returns the requested variable value.
                                 \pause
+
                                 \item The value is passed from \texttt{rootJS} to the \texttt{NodeJSApplication}.
                         \end{enumerate}
                         \\
@@ -48,12 +52,14 @@
                 \textit{Participating actor instances} &
                 Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{ProxyObject}; Communicates with \texttt{ROOT}\\
                 \hline
-                                \pause
 
                 \textit{Flow of events} &
                         \begin{enumerate}
+                                \pause
+
                                 \item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} object by calling a constructor function.
                                 \pause
+
                                 \item \texttt{rootJS} encapsulates the requested \texttt{ROOT} object within a \texttt{ProxyObject} that was created recursively.
                         \end{enumerate}
                         \\
@@ -64,12 +70,16 @@
                 \textit{Flow of events} &
                         \begin{enumerate}
                                 \setcounter{enumi}{2}
+                                \pause
+
                                 \item \texttt{rootJS} stores the created \texttt{ProxyObject} in a cache memory.
                                 \pause
+
                                 \item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
                         \end{enumerate}
                         \\
                 \hline
+                \pause
 
                 \textit{Entry condition} & \texttt{rootJS} has been initialized.\\
                 \hline
@@ -89,14 +99,17 @@
 
                 \textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{ProxyObject}; Communicates with \texttt{ROOT}\\
                 \hline
-                                \pause
 
                 \textit{Flow of events} &
                         \begin{enumerate}
+                                \pause
+
                                 \item The \texttt{NodeJSApplication} requests access to a \texttt{ROOT} function.
                                 \pause
+
                                 \item \texttt{rootJS} calls the corresponding \texttt{ROOT} function.
                                 \pause
+
                                 \item \texttt{ROOT} responds.
                         \end{enumerate}
                         \\
@@ -107,12 +120,16 @@
                 \textit{Flow of events} &
                         \begin{enumerate}
                                 \setcounter{enumi}{3}
+                                \pause
+
                                 \item \texttt{rootJS} encapsulates the returned \texttt{ROOT} object within a \texttt{ProxyObject}.
                                 \pause
+
                                 \item The \texttt{ProxyObject} is exposed to the \texttt{NodeJSApplication}.
                         \end{enumerate}
                        \\
                 \hline
+                \pause
 
                 \textit{Entry condition} & \texttt{rootJS} has been initialized.\\
                 \hline
@@ -132,14 +149,17 @@
 
                 \textit{Participating actor instances} & Initiated by \texttt{NodeJSApplication}; Processed by \texttt{rootJS}, \texttt{Cling}; Communicates with \texttt{ROOT}\\
                 \hline
-                                \pause
 
                 \textit{Flow of events} &
                         \begin{enumerate}
+                                \pause
+
                                 \item The \texttt{NodeJSApplication} wants to execute \texttt{ROOT} specific C++ code (given as string) during runtime.
                                 \pause
+
                                 \item \texttt{rootJS} forwards the instructions to \texttt{Cling}.
                                 \pause
+
                                 \item \texttt{Cling} evaluates the received instructions using JIT compilation concepts and dynamically modifies the state of \texttt{ROOT}.
                         \end{enumerate}
                         \\
@@ -150,12 +170,16 @@
                 \textit{Flow of events} &
                         \begin{enumerate}
                                 \setcounter{enumi}{2}
+                                \pause
+
                                 \item \texttt{rootJS} takes care of encapsulating exceptions possibly thrown by \texttt{Cling} or \texttt{ROOT} during evaluation and execution.
                                 \pause
+
                                 \item \texttt{rootJS} provides the evaluation results and corresponding return values to the \texttt{NodeJSApplication}.
                         \end{enumerate}
                         \\
                 \hline
+                \pause
 
                 \textit{Entry condition} & \texttt{rootJS} and \texttt{Cling} have been initialized.\\
                 \hline
