@@ -1,4 +1,18 @@
-\section{Interface}
-\begin{frame}{Product interface}
+\section{Functions}
+\subsection{Description}
 
+\begin{frame}{Product interface and functions}
+\begin{itemize}
+  \item Expose a JS object containing all accessible ROOT variables, functions and classes.\\
+    \begin{itemize}
+      \item variables
+      \item functions
+      \item classes
+    \end{itemize}
+  \item Exposed classes will be accessible via constructors returning the corresponding objects. A constructor will be accessible through a proxy function to support parameter overloading. If there is no method to handle the passed arguments, an exception will be thrown.\\
+  \item A constructor can be called with an additional callback method that will be executed after the object has been constructed.\\
+  \item The classes are encapsulated in their namespaces from ROOT. Each namespace is an object containing namespaces or class constructors.\\
+  \item Exceptions thrown by ROOT will be forwarded to JavaScript and can be treated as normal exceptions by JavaScript.\\
+  \item Global variables are accessible via getter and setter methods to ensure their values are kept in sync with the ROOT framework.\\
+\end{itemize}
 \end{frame}
