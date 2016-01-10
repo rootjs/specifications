@@ -11,3 +11,4 @@ http://stackoverflow.com/questions/22644328/when-is-the-thread-pool-used
 http://getsp.sbisite.com/SBI/IT/Shared%20Documents/IT%20FuncSpec.pdf
 
 http://www.tc.umn.edu/~kaes0001/randomstuff/EclipseRoot.pdf
+https://intranet.kit.edu/praesentationen.php
